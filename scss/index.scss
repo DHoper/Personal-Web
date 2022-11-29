@@ -82,6 +82,11 @@ html {
     background: transparent;
     cursor: none;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
