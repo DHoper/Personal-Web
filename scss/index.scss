@@ -3,26 +3,26 @@
 @font-face {
     font-family: 'Monumentextended';
     src:
-        url('assest/fonts/MonumentExtended-Regular.otf'),
-        url('assest/fonts/MonumentExtended-Ultrabold.otf'),
+        url('../assest/fonts/MonumentExtended-Regular.otf'),
+        url('../assest/fonts/MonumentExtended-Ultrabold.otf'),
 }
 
 @font-face {
     font-family: 'Robert';
     src:
-        url('assest/fonts/RobertSans-Black.ttf'),
+        url('../assest/fonts/RobertSans-Black.ttf'),
 }
 
 @font-face {
     font-family: 'chinson';
     src:
-        url('assest/fonts/清松手寫體1.ttf'),
+        url('../assest/fonts/清松手寫體1.ttf'),
 }
 
 @font-face {
     font-family: 'henyi';
     src:
-        url('assest/fonts/SentyMARUKO.ttf'),
+        url('../assest/fonts/SentyMARUKO.ttf'),
 }
 
 $color: #e06c75;
