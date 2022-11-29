@@ -512,7 +512,6 @@ main .project .c1 .cardBlock .cardF, main .project .c2 .cardBlock .cardF, main .
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 70rem;
   height: 40rem;
   background-color: #ff81cc;
@@ -524,9 +523,10 @@ main .project .c1 .cardBlock .cardF, main .project .c2 .cardBlock .cardF, main .
 main .project .c1 .cardBlock .cardF h1, main .project .c2 .cardBlock .cardF h1, main .project .c3 .cardBlock .cardF h1 {
   font-size: 4rem;
   font-family: chinson, serif;
-  margin-top: -3.5rem;
+  margin-top: 1.5rem;
 }
 main .project .c1 .cardBlock .cardF img, main .project .c2 .cardBlock .cardF img, main .project .c3 .cardBlock .cardF img {
+  margin-top: 1.5rem;
   width: 75%;
   height: -webkit-max-content;
   height: -moz-max-content;
