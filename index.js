@@ -18,7 +18,7 @@ aLinks.forEach((item) => {
         cursor.src = "assest/svg/6265a454da432257599722a1_cursor-hand.svg";
         // cursor.style.transform = `translate3d(${mouseX - 60}px, ${mouseY - 75}px, 0)`;
     });
-    item.addEventListener('mouseout', () => { cursor.src = "/assest/svg/6265a2f373ec362f1b7911c9_cursor-arrow.svg"; });
+    item.addEventListener('mouseout', () => { cursor.src = "assest/svg/6265a2f373ec362f1b7911c9_cursor-arrow.svg"; });
 });
 
 a.forEach((item) => {
@@ -27,7 +27,7 @@ a.forEach((item) => {
         const mouseX = e.clientX;
         cursor.src = "assest/svg/6265a454da432257599722a1_cursor-hand.svg";
     });
-    item.addEventListener('mouseout', () => { cursor.src = "/assest/svg/6265a2f373ec362f1b7911c9_cursor-arrow.svg"; });
+    item.addEventListener('mouseout', () => { cursor.src = "assest/svg/6265a2f373ec362f1b7911c9_cursor-arrow.svg"; });
 });
 
 //----nav效果----------------------------------------------------------------//
