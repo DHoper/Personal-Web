@@ -124,7 +124,7 @@ main {
 }
 main .banner {
   position: relative;
-  padding: 5% 0 5% 0;
+  padding: 7% 0 7% 0;
   background-color: #5fc7ed;
   background-color: #201f1f;
   height: 100vh;
@@ -141,7 +141,7 @@ main .banner .text h1 {
   font-family: JetBrains Mono, monospace;
   color: #FFFD82;
   position: relative;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin: 0;
 }
 main .banner .text h1 > span:nth-child(1) {
@@ -155,7 +155,7 @@ main .banner .text h1 > span:nth-child(4) {
   margin: 0px auto;
   font-weight: 400;
   text-align: left;
-  font-size: 10.5rem;
+  font-size: 12.5rem;
   color: transparent;
   text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53D8FB, 3.6666666667px 5.5px #53D8FB, 4px 6px #53D8FB, 4.3333333333px 6.5px #53D8FB, 4.6666666667px 7px #53D8FB, 5px 7.5px #53D8FB, 5px 7.5px #FFF07C, 5.3333333333px 8px #FFF07C, 5.6666666667px 8.5px #FFF07C, 6px 9px #FFF07C, 6.3333333333px 9.5px #FFF07C, 6.6666666667px 10px #FFF07C;
   -webkit-animation-name: animateShadow;
@@ -166,9 +166,9 @@ main .banner .text h1 > span:nth-child(4) {
           animation-iteration-count: infinite;
 }
 main .banner .text h2 {
-  font-size: 7.6rem;
+  font-size: 8rem;
   line-height: 10.8rem;
-  margin: 1rem 0 0 8.5%;
+  margin: 3rem 0 0 10.5%;
   font-family: "chinson", serif;
   font-family: "Monumentextended", serif;
   letter-spacing: 1.5rem;
@@ -344,13 +344,13 @@ main .introduction .content .talking .dialog .text2 {
           animation: dialog 12s linear infinite;
 }
 main .introduction .content .talking .dialog h5 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 2.5%;
   margin-bottom: 5%;
 }
 main .introduction .content .talking .dialog p {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
   font-family: chinson, serif;
 }
 main .introduction .content .list {
@@ -364,13 +364,13 @@ main .introduction .content .list .block .outer {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   border: #0d0d0d 0.1rem solid;
   border-top: none;
   font-family: chinson, serif;
 }
 main .introduction .content .list .block .outer span {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 500;
   text-align: center;
   letter-spacing: 5rem;
@@ -381,7 +381,7 @@ main .introduction .content .list .block .outer a {
   right: 2.5%;
 }
 main .introduction .content .list .block .outer a img {
-  width: 1.3rem;
+  width: 1.6rem;
 }
 main .introduction .content .list .block .outer .pickup {
   transition: all 0.8s ease-in-out;
@@ -408,7 +408,7 @@ main .introduction .content .list .block .inner p {
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.4rem;
   line-height: 2rem;
   text-align: center;
   color: black;
@@ -566,7 +566,7 @@ main .project .c1 .cardBlock .cardB h3, main .project .c2 .cardBlock .cardB h3, 
   font-size: 2rem;
   font-family: chinson, serif;
   margin-top: 0.5rem;
-  margin-bottom: 7rem;
+  margin-bottom: 4.5rem;
   text-align: center;
 }
 main .project .c1 .cardBlock .cardB p, main .project .c2 .cardBlock .cardB p, main .project .c3 .cardBlock .cardB p {
@@ -625,10 +625,10 @@ main .info .contact {
   position: relative;
   width: 70%;
   height: 30vh;
-  border: #0d0d0d 0.1rem solid;
+  border: #0d0d0d 0.2rem solid;
   border-radius: 2rem;
   box-shadow: 0.25rem 0.25rem 0 0 #0d0d0d;
-  padding: 1.5rem 10rem;
+  padding: 2rem 10rem 3rem 10rem;
   display: flex;
   flex-direction: column;
   color: #0d0d0d;
@@ -638,7 +638,7 @@ main .info .contact .circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-family: chinson, serif;
   font-weight: 600;
   position: absolute;
@@ -656,15 +656,16 @@ main .info .contact h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-family: chinson, serif;
+  margin-bottom: 0.2rem;
 }
 main .info .contact p {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-family: chinson, serif;
   font-weight: 400;
 }
@@ -673,8 +674,8 @@ main .info .contact > p:first-of-type {
 }
 main .info .contact .line {
   width: 100%;
-  border-top: #0d0d0d 0.1rem solid;
-  margin: 1rem 0;
+  border-top: #0d0d0d 0.2rem solid;
+  margin: 1.4rem 0;
 }
 main .info .contact a {
   color: #0d0d0d;

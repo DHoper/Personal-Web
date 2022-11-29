@@ -151,7 +151,7 @@ main {
     overflow: hidden;
     .banner {
         position: relative;
-        padding: 5% 0 5% 0;
+        padding: 7% 0 7% 0;
         background-color: #5fc7ed;
         background-color: #201f1f;
         height: 100vh;
@@ -168,7 +168,7 @@ main {
                 font-family: JetBrains Mono, monospace;
                 color: #FFFD82;
                 position: relative;
-                font-size: 2rem;
+                font-size: 2.5rem;
                 margin: 0;
 
                 &>span:nth-child(1) {
@@ -184,7 +184,7 @@ main {
                     margin: 0px auto;
                     font-weight: 400;
                     text-align: left;
-                    font-size: 10.5rem;
+                    font-size: 12.5rem;
                     color: transparent;
                     text-shadow: makelongshadow($color, $color2, $color3);
                     animation-name: animateShadow;
@@ -195,9 +195,9 @@ main {
 
             h2 {
 
-                font-size: 7.6rem;
+                font-size: 8rem;
                 line-height: 10.8rem;
-                margin: 1rem 0 0 8.5%;
+                margin: 3rem 0 0 10.5%;
                 font-family: 'chinson', serif;
                 font-family: 'Monumentextended', serif;
                 letter-spacing: 1.5rem;
@@ -391,15 +391,15 @@ main {
                     }
 
                     h5 {
-                        font-size: 1.5rem;
+                        font-size: 2rem;
                         margin-top: 2.5%;
                         margin-bottom: 5%;
                         // font-family: chinson , serif;
                     }
 
                     p {
-                        font-size: 1rem;
-                        line-height: 1.5rem;
+                        font-size: 1.5rem;
+                        line-height: 1.8rem;
                         font-family: chinson , serif;
                     }
                 }
@@ -417,13 +417,13 @@ main {
                         justify-content: center;
                         align-items: center;
                         width: 100%;
-                        height: 4rem;
+                        height: 5rem;
                         border: #0d0d0d .1rem solid;
                         border-top: none;
                         font-family: chinson, serif;
 
                         span {
-                            font-size: 2rem;
+                            font-size: 2.3rem;
                             font-weight: 500;
                             text-align: center;
                             letter-spacing: 5rem;
@@ -435,7 +435,7 @@ main {
                             right: 2.5%;
 
                             img {
-                                width: 1.3rem;
+                                width: 1.6rem;
                             }
                         }
 
@@ -467,7 +467,7 @@ main {
                             display: flex;
                             align-items: center;
                             font-weight: 600;
-                            font-size: 1rem;
+                            font-size: 1.4rem;
                             line-height: 2rem;
                             text-align: center;
                             color: black;
@@ -647,7 +647,7 @@ main {
                         font-size: 2rem;
                         font-family: chinson, serif;
                         margin-top: .5rem;
-                        margin-bottom: 7rem;
+                        margin-bottom: 4.5rem;
                         text-align: center;
                     }
     
@@ -723,10 +723,10 @@ main {
             position: relative;
             width: 70%;
             height: 30vh;
-            border: #0d0d0d .1rem solid;
+            border: #0d0d0d .2rem solid;
             border-radius: 2rem;
             box-shadow: .25rem .25rem 0 0 #0d0d0d;
-            padding: 1.5rem 10rem;
+            padding: 2rem 10rem 3rem 10rem;
             display: flex;
             flex-direction: column;
             color: #0d0d0d;
@@ -736,7 +736,7 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 1.5rem;
+                font-size: 1.7rem;
                 font-family: chinson , serif;
                 font-weight: 600;
                 position: absolute;
@@ -755,8 +755,9 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 font-family: chinson, serif;
+                margin-bottom: .2rem;
             }
 
             p {
@@ -764,7 +765,7 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 1.25rem;
+                font-size: 1.5rem;
                 font-family: chinson, serif;
                 font-weight: 400;
             }
@@ -775,8 +776,8 @@ main {
 
             .line {
                 width: 100%;
-                border-top: #0d0d0d .1rem solid;
-                margin: 1rem 0;     
+                border-top: #0d0d0d .2rem solid;
+                margin: 1.4rem 0;     
             }
 
             a {
