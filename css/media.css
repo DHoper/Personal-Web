@@ -1,0 +1,706 @@
+@media screen and (max-width: 1800px) {
+  html {
+    font-size: 14px !important;
+  }
+  body main .banner {
+    padding: 10rem 0 10rem 0;
+  }
+}
+@media screen and (max-width: 1500px) {
+  html {
+    font-size: 12px !important;
+  }
+  body main .banner {
+    padding: 13rem 0 0rem 0;
+  }
+  body main .banner .text {
+    padding-left: 14vw;
+  }
+  body main .banner .text h2:first-of-type {
+    margin-top: 5rem;
+  }
+}
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 11px !important;
+  }
+  body main .banner {
+    padding: 12.5rem 0 0 0;
+    height: 95vh;
+  }
+  body main .banner .text {
+    padding-left: 11vw;
+  }
+  body main .banner .text h1 > span:nth-child(4) {
+    font-size: 12rem;
+  }
+  body main .banner .text h2:first-of-type {
+    margin-top: 8rem;
+  }
+  body main .banner .text h2 {
+    margin: 2rem 0 0 0;
+    line-height: 8rem;
+    font-size: 7.5rem;
+  }
+  body main .introduction .content .talking .dialog .text1, body main .introduction .content .talking .dialog .text2 {
+    padding: 7.5% 7.5%;
+  }
+  body main .introduction .content .talking .dialog .text1 h5, body main .introduction .content .talking .dialog .text2 h5 {
+    margin-bottom: 3rem;
+  }
+  body main .info .contact h2 {
+    font-size: 2.5rem;
+  }
+  body main .info .contact .line {
+    margin: 2rem 0;
+  }
+  body main .info .contact p {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 1130px) {
+  html {
+    font-size: 10px !important;
+  }
+  body main .banner {
+    padding: 18rem 0 0rem 0;
+  }
+  body main .banner .text {
+    padding-left: 14vw;
+  }
+  body main .banner .text h2:first-of-type {
+    margin-top: 10rem;
+  }
+  body main .banner .text .arrowBlock {
+    bottom: 5%;
+    right: 2.5%;
+  }
+}
+@media screen and (max-width: 1050px) {
+  html {
+    font-size: 10px !important;
+  }
+  body main .banner .text {
+    padding-left: 10vw;
+  }
+}
+@media screen and (max-width: 975px) {
+  html {
+    font-size: 8px !important;
+  }
+  body nav a {
+    font-size: 4.5rem;
+    margin: 0 3rem;
+  }
+  body nav a:last-child i {
+    font-size: 7rem;
+  }
+  body main .banner {
+    padding: 20rem 0 0rem 0;
+  }
+  body main .banner .text h1 > span:nth-child(4) {
+    font-size: 18.5rem;
+  }
+  body main .banner .text h2 {
+    font-size: 11rem;
+    line-height: 12rem;
+  }
+  body main .introduction .content .talking .dialog {
+    width: 60vw;
+    height: 30vh;
+    box-shadow: 0.8rem 0.8rem 0 0 #0d0d0d;
+  }
+  body main .introduction .content .talking .dialog .text1, body main .introduction .content .talking .dialog .text2 {
+    padding: 1.5% 7.5%;
+  }
+  body main .introduction .content .talking .dialog .text1 h5, body main .introduction .content .talking .dialog .text2 h5 {
+    margin-bottom: 4rem;
+    font-size: 3.5rem;
+  }
+  body main .introduction .content .talking .dialog .text1 p, body main .introduction .content .talking .dialog .text2 p {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+  }
+  body main .introduction .content .list {
+    width: 100%;
+  }
+  body main .introduction .content .list .block .outer {
+    height: 8rem;
+  }
+  body main .introduction .content .list .block .outer span {
+    font-size: 2.5rem;
+  }
+  body main .introduction .content .list .block .inner p {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+  body main .introduction .content .list .block .foldup {
+    height: 18rem;
+  }
+  body main .project .c1 .cardBlock, body main .project .c2 .cardBlock, body main .project .c3 .cardBlock {
+    width: 80rem;
+    height: 45rem;
+  }
+  body main .project .c1 .cardBlock .cardF h1, body main .project .c2 .cardBlock .cardF h1, body main .project .c3 .cardBlock .cardF h1 {
+    font-size: 5rem;
+  }
+  body main .project .c1 .cardBlock .cardB h1, body main .project .c2 .cardBlock .cardB h1, body main .project .c3 .cardBlock .cardB h1 {
+    font-size: 5rem;
+  }
+  body main .project .c1 .cardBlock .cardB h3, body main .project .c2 .cardBlock .cardB h3, body main .project .c3 .cardBlock .cardB h3 {
+    font-size: 3rem;
+  }
+  body main .project .c1 .cardBlock .cardB p, body main .project .c2 .cardBlock .cardB p, body main .project .c3 .cardBlock .cardB p {
+    font-size: 2rem;
+  }
+  body main .info .contact {
+    width: 80%;
+    box-shadow: 0.8rem 0.8rem 0 0 #0d0d0d;
+  }
+  body main .info .contact h2 {
+    font-size: 3.5rem;
+  }
+  body main .info .contact .line {
+    margin: 2.5rem 0;
+  }
+  body main .info .contact p {
+    font-size: 2.5rem;
+  }
+  body main .info .contact .circle {
+    box-shadow: 0.6rem 0.6rem 0 0 #0d0d0d;
+  }
+}
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 7px !important;
+  }
+  body main .banner {
+    height: 80vh;
+    padding: 20rem 0 0rem 0;
+  }
+  body main .banner .text h1 > span:nth-child(4) {
+    font-size: 16.5rem;
+  }
+  body main .banner .text h2 {
+    font-size: 9rem;
+    line-height: 10rem;
+  }
+  body main .marquee, body main .marquee2 {
+    border-bottom: #0d0d0d 0.5rem solid !important;
+  }
+  body main .info .contact {
+    padding: 3% 5%;
+    width: 80%;
+    height: 40vh;
+    box-shadow: 0.8rem 0.8rem 0 0 #0d0d0d;
+  }
+  body main .info .contact h2 {
+    font-size: 4rem;
+  }
+  body main .info .contact .line {
+    margin: 3rem 0 4rem 0;
+  }
+  body main .info .contact p {
+    font-size: 3rem;
+  }
+  body main .info .contact .circle {
+    box-shadow: 0.6rem 0.6rem 0 0 #0d0d0d;
+    width: 7.5rem;
+    height: 7.5rem;
+    left: -3.75rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  html {
+    font-size: 6px !important;
+  }
+  body main .banner {
+    height: 65vh;
+    padding: 20rem 0 0rem 0;
+  }
+  body main .banner .text h1 > span:nth-child(4) {
+    font-size: 14.5rem;
+  }
+  body main .banner .text h2 {
+    font-size: 8rem;
+    line-height: 9rem;
+  }
+  body main .introduction .content .talking .me {
+    box-shadow: 1rem 1rem 0 0 #0d0d0d;
+  }
+  body main .introduction .content .talking .dialog {
+    width: 70vw;
+    height: 30vh;
+    box-shadow: 1rem 1rem 0 0 #0d0d0d;
+  }
+  body main .introduction .content .talking .dialog .text1, body main .introduction .content .talking .dialog .text2 {
+    padding: 4% 7.5%;
+  }
+  body main .introduction .content .talking .dialog .text1 h5, body main .introduction .content .talking .dialog .text2 h5 {
+    margin-bottom: 5.5rem;
+    font-size: 3.5rem;
+  }
+  body main .introduction .content .talking .dialog .text1 p, body main .introduction .content .talking .dialog .text2 p {
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+  }
+  body main .introduction .content .list {
+    width: 100%;
+  }
+  body main .introduction .content .list .block .outer {
+    height: 15rem;
+    border: 0.25rem solid #0d0d0d;
+  }
+  body main .introduction .content .list .block .outer span {
+    font-size: 3.5rem;
+    font-family: serif;
+    font-weight: 600;
+  }
+  body main .introduction .content .list .block .outer a {
+    right: 5%;
+  }
+  body main .introduction .content .list .block .outer a img {
+    width: 3rem;
+  }
+  body main .introduction .content .list .block .inner p {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  body main .introduction .content .list .block .inner p img {
+    top: 1.1rem;
+    left: -2.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 1.5rem;
+  }
+  body main .introduction .content .list .block .foldup {
+    height: 26rem;
+  }
+  body main .marquee, body main .marquee2 {
+    border-bottom: #0d0d0d 0.5rem solid !important;
+    padding: 2.5rem 0 !important;
+  }
+  body main .project {
+    flex-direction: column;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    transform: translateX(0);
+  }
+  body main .project .c1, body main .project .c2, body main .project .c3 {
+    width: 100%;
+    padding: 0;
+  }
+  body main .project .c1 .arrowL, body main .project .c2 .arrowL, body main .project .c3 .arrowL {
+    display: none;
+  }
+  body main .project .c1 .arrowR, body main .project .c2 .arrowR, body main .project .c3 .arrowR {
+    display: none;
+  }
+  body main .project .c1 .cardBlock, body main .project .c2 .cardBlock, body main .project .c3 .cardBlock {
+    width: 100%;
+    height: unset;
+  }
+  body main .project .c1 .cardBlock .cardF, body main .project .c2 .cardBlock .cardF, body main .project .c3 .cardBlock .cardF {
+    flex-direction: row;
+    height: unset;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  body main .project .c1 .cardBlock .cardF h1, body main .project .c2 .cardBlock .cardF h1, body main .project .c3 .cardBlock .cardF h1 {
+    display: none;
+  }
+  body main .project .c1 .cardBlock .cardF img, body main .project .c2 .cardBlock .cardF img, body main .project .c3 .cardBlock .cardF img {
+    margin-top: 0;
+    height: unset;
+    border-radius: 0;
+    border: none;
+    width: 100%;
+  }
+  body main .project .c1 .cardBlock .cardB, body main .project .c2 .cardBlock .cardB, body main .project .c3 .cardBlock .cardB {
+    position: static;
+    height: unset;
+    padding: 5rem 5rem;
+    border-radius: 0;
+  }
+  body main .project .c1 .cardBlock .cardB h1, body main .project .c2 .cardBlock .cardB h1, body main .project .c3 .cardBlock .cardB h1 {
+    font-size: 5.5rem;
+  }
+  body main .project .c1 .cardBlock .cardB h3, body main .project .c2 .cardBlock .cardB h3, body main .project .c3 .cardBlock .cardB h3 {
+    font-size: 3.5rem;
+  }
+  body main .project .c1 .cardBlock .cardB p, body main .project .c2 .cardBlock .cardB p, body main .project .c3 .cardBlock .cardB p {
+    font-size: 3.5rem;
+  }
+  body main .project .c1 .cardBlock .cardB .buttonBlock, body main .project .c2 .cardBlock .cardB .buttonBlock, body main .project .c3 .cardBlock .cardB .buttonBlock {
+    position: static;
+    margin-top: 5rem;
+  }
+  body main .project .c1 .cardBlock .cardB .buttonBlock > a button, body main .project .c2 .cardBlock .cardB .buttonBlock > a button, body main .project .c3 .cardBlock .cardB .buttonBlock > a button {
+    font-size: 4rem;
+    box-shadow: 1rem 1rem 0 0 #302f2f;
+  }
+  body main .project .c1 .cardBlock .cardB:hover, body main .project .c2 .cardBlock .cardB:hover, body main .project .c3 .cardBlock .cardB:hover {
+    left: unset;
+  }
+  body main .project .c1 .cardBlock .cardB.active, body main .project .c2 .cardBlock .cardB.active, body main .project .c3 .cardBlock .cardB.active {
+    -webkit-animation: none;
+            animation: none;
+  }
+  body main .project .c1 .cardBlock .cardB.activeBack, body main .project .c2 .cardBlock .cardB.activeBack, body main .project .c3 .cardBlock .cardB.activeBack {
+    -webkit-animation: none;
+            animation: none;
+  }
+  body main .info .contact {
+    width: 85%;
+    height: 30vh;
+    box-shadow: 1rem 1rem 0 0 #0d0d0d;
+  }
+}
+@media screen and (max-width: 560px) {
+  html {
+    font-size: 5px !important;
+  }
+  body main .banner {
+    height: 50vh;
+    padding: 20rem 2rem 0rem 6.5rem;
+  }
+  body main .banner .text {
+    padding-left: 0;
+  }
+  body main .banner .text h1 {
+    font-size: 3.5rem;
+  }
+  body main .banner .text h1 > span:nth-child(4) {
+    font-size: 11vw;
+  }
+  body main .banner .text h2 {
+    font-size: 10rem;
+    line-height: 10.5rem;
+  }
+  body main .introduction .content .talking .me {
+    box-shadow: 1.2rem 1.2rem 0 0 #0d0d0d;
+  }
+  body main .introduction .content .talking .dialog {
+    width: 60vw;
+    height: 30vh;
+    box-shadow: 1.2rem 1.2rem 0 0 #0d0d0d;
+  }
+  body main .introduction .content .talking .dialog .text1, body main .introduction .content .talking .dialog .text2 {
+    padding: 7.5% 7.5%;
+  }
+  body main .introduction .content .talking .dialog .text1 h5, body main .introduction .content .talking .dialog .text2 h5 {
+    margin-bottom: 5.5rem;
+    font-size: 3.5rem;
+  }
+  body main .introduction .content .talking .dialog .text1 p, body main .introduction .content .talking .dialog .text2 p {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  body main .info {
+    padding: 5%;
+    height: unset;
+  }
+  body main .info .contact {
+    padding: 10%;
+    width: 95%;
+    height: unset;
+    box-shadow: 1rem 1rem 0 0 #0d0d0d;
+  }
+  body main .info .contact .circle {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10rem;
+    height: 10rem;
+    font-size: 3rem;
+    box-shadow: 1rem 1rem 0 0 #0d0d0d;
+  }
+  body main .info .contact p {
+    font-size: 3.2rem;
+    font-weight: 600;
+    flex-direction: column;
+  }
+  body main .info .contact p span {
+    margin: 2rem 0;
+  }
+  body main .info .contact .gitText {
+    flex-direction: column;
+  }
+  body main .info .contact .gitText a {
+    margin: 2rem 0;
+  }
+}
+@media screen and (max-width: 490px) {
+  html {
+    font-size: 4.5px !important;
+  }
+  .cursor {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 4px !important;
+  }
+  body nav {
+    height: 8vh;
+  }
+  body nav a {
+    font-size: 4.5rem;
+    margin: 0 1.5rem;
+  }
+  body nav a:last-child i {
+    font-size: 7.5rem;
+  }
+  body main .banner {
+    height: 40vh;
+  }
+  body main .introduction .content .talking {
+    height: 35vh;
+  }
+  body main .introduction .content .talking .me {
+    box-shadow: 1.5rem 1.5rem 0 0 #0d0d0d;
+  }
+  body main .introduction .content .talking .dialog {
+    width: 60vw;
+    height: 25vh;
+    box-shadow: 1.5rem 1.5rem 0 0 #0d0d0d;
+  }
+  body main .introduction .content .talking .dialog .text1, body main .introduction .content .talking .dialog .text2 {
+    padding: 2.5% 7.5%;
+  }
+  body main .introduction .content .talking .dialog .text1 h5, body main .introduction .content .talking .dialog .text2 h5 {
+    margin-bottom: 5.5rem;
+    font-size: 4.5rem;
+  }
+  body main .introduction .content .talking .dialog .text1 p, body main .introduction .content .talking .dialog .text2 p {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    font-weight: 600;
+  }
+  body main .introduction .content .list .block .outer {
+    height: 20rem;
+  }
+  body main .introduction .content .list .block .outer span {
+    font-size: 5rem;
+  }
+  body main .introduction .content .list .block .outer a img {
+    width: 3.5rem;
+  }
+  body main .introduction .content .list .block .inner p {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+  body main .introduction .content .list .block .inner p img {
+    top: 2rem;
+    left: -2.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  body main .introduction .content .list .block .foldup {
+    height: 50rem;
+  }
+  body main .marquee, body main .marquee2 {
+    border-bottom: #0d0d0d 0.5rem solid !important;
+    padding: 10rem 0 !important;
+  }
+  body main .marquee h1, body main .marquee2 h1 {
+    font-size: 20rem !important;
+  }
+  body main .project .c1 .cardBlock .cardB, body main .project .c2 .cardBlock .cardB, body main .project .c3 .cardBlock .cardB {
+    padding: 10rem 5rem;
+  }
+  body main .project .c1 .cardBlock .cardB h1, body main .project .c2 .cardBlock .cardB h1, body main .project .c3 .cardBlock .cardB h1 {
+    font-size: 9.5rem;
+  }
+  body main .project .c1 .cardBlock .cardB h3, body main .project .c2 .cardBlock .cardB h3, body main .project .c3 .cardBlock .cardB h3 {
+    font-size: 5rem;
+    margin-bottom: 10rem;
+  }
+  body main .project .c1 .cardBlock .cardB p, body main .project .c2 .cardBlock .cardB p, body main .project .c3 .cardBlock .cardB p {
+    font-size: 4.5rem;
+  }
+  body main .project .c1 .cardBlock .cardB p:last-of-type, body main .project .c2 .cardBlock .cardB p:last-of-type, body main .project .c3 .cardBlock .cardB p:last-of-type {
+    margin-top: -3rem;
+  }
+  body main .project .c1 .cardBlock .cardB .buttonBlock, body main .project .c2 .cardBlock .cardB .buttonBlock, body main .project .c3 .cardBlock .cardB .buttonBlock {
+    position: static;
+    margin-top: 7.5rem;
+  }
+  body main .project .c1 .cardBlock .cardB .buttonBlock > a button, body main .project .c2 .cardBlock .cardB .buttonBlock > a button, body main .project .c3 .cardBlock .cardB .buttonBlock > a button {
+    font-size: 7.5rem;
+    box-shadow: 1rem 1rem 0 0 #302f2f;
+  }
+  body main .project .c1 .cardBlock .cardB:hover, body main .project .c2 .cardBlock .cardB:hover, body main .project .c3 .cardBlock .cardB:hover {
+    left: unset;
+  }
+  body main .project .c1 .cardBlock .cardB.active, body main .project .c2 .cardBlock .cardB.active, body main .project .c3 .cardBlock .cardB.active {
+    -webkit-animation: none;
+            animation: none;
+  }
+  body main .project .c1 .cardBlock .cardB.activeBack, body main .project .c2 .cardBlock .cardB.activeBack, body main .project .c3 .cardBlock .cardB.activeBack {
+    -webkit-animation: none;
+            animation: none;
+  }
+  body main .info {
+    padding: 5%;
+    height: unset;
+  }
+  body main .info .contact {
+    padding: 12% 10% 10% 10%;
+    width: 95%;
+    height: unset;
+    box-shadow: 1rem 1rem 0 0 #0d0d0d;
+  }
+  body main .info .contact .circle {
+    width: 12.5rem;
+    height: 12.5rem;
+    font-size: 4rem;
+  }
+  body main .info .contact h2 {
+    font-size: 6rem;
+  }
+  body main .info .contact .line {
+    margin: 7rem 0 9rem 0;
+  }
+  body main .info .contact p {
+    font-size: 4.5rem;
+  }
+}
+@media screen and (max-width: 390px) {
+  body nav {
+    height: 8vh;
+  }
+  body nav a {
+    font-size: 4rem;
+    margin: 0 1.5rem;
+  }
+  body main .project .c1 .cardBlock .cardB .buttonBlock > a button, body main .project .c2 .cardBlock .cardB .buttonBlock > a button, body main .project .c3 .cardBlock .cardB .buttonBlock > a button {
+    font-size: 6rem !important;
+  }
+}
+@media screen and (max-width: 365px) {
+  body nav {
+    height: 6.5vh;
+  }
+  body nav a {
+    font-size: 3.5rem;
+    margin: 0 1.5rem;
+  }
+  body nav a:last-child i {
+    font-size: 5.5rem;
+  }
+  body main .banner {
+    height: unset;
+    padding: 15rem 2rem 0rem 5rem;
+  }
+  body main .banner .text {
+    padding-left: 0;
+  }
+  body main .banner .text h1 {
+    font-size: 3.5rem;
+  }
+  body main .banner .text h1 > span:nth-child(4) {
+    font-size: 8vw;
+    -webkit-animation: none;
+            animation: none;
+    text-shadow: 1.3333333333px 2px #e06c75, 3.6666666667px 3px #53d8fb;
+  }
+  body main .banner .text h2 {
+    font-size: 11rem;
+    line-height: 12.5rem;
+  }
+  body main .banner .text h2:first-of-type {
+    margin-top: 3rem;
+  }
+  body main .introduction .content .talking {
+    height: 60vh;
+  }
+  body main .introduction .content .talking .me {
+    box-shadow: 1.2rem 1.2rem 0 0 #0d0d0d;
+    width: 30vw;
+    height: 30vw;
+  }
+  body main .introduction .content .talking .dialog {
+    width: 45vw;
+    height: 50vh;
+    box-shadow: 1.2rem 1.2rem 0 0 #0d0d0d;
+  }
+  body main .introduction .content .talking .dialog .text1, body main .introduction .content .talking .dialog .text2 {
+    padding: 5% 2rem;
+  }
+  body main .introduction .content .talking .dialog .text1 h5, body main .introduction .content .talking .dialog .text2 h5 {
+    margin-bottom: 5.5rem;
+    font-size: 6rem;
+    text-align: center;
+  }
+  body main .introduction .content .talking .dialog .text1 p, body main .introduction .content .talking .dialog .text2 p {
+    font-size: 4.5rem;
+    line-height: 6rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  body main .project .c1 .cardBlock .cardB .buttonBlock > a button, body main .project .c2 .cardBlock .cardB .buttonBlock > a button, body main .project .c3 .cardBlock .cardB .buttonBlock > a button {
+    font-size: 6rem !important;
+  }
+  body main .info {
+    padding: 10% 5%;
+  }
+  body main .info .contact {
+    padding: 10%;
+    width: 95%;
+    height: unset;
+    box-shadow: 1rem 1rem 0 0 #0d0d0d;
+  }
+  body main .info .contact .circle {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10rem;
+    height: 10rem;
+    font-size: 3rem;
+    box-shadow: 1rem 1rem 0 0 #0d0d0d;
+  }
+  body main .info .contact p {
+    font-size: 4.5rem;
+    font-weight: 600;
+  }
+  body main .info .contact .gitText {
+    flex-direction: column;
+    font-size: 4.5rem;
+  }
+  body main .info .contact .gitText a {
+    margin: 2rem 0;
+  }
+}
+@media screen and (max-width: 305px) {
+  body nav {
+    height: 7vh;
+  }
+  body nav a {
+    font-size: 3rem;
+    margin: 0 1.5rem;
+  }
+  body nav a:last-child i {
+    font-size: 6.5rem;
+  }
+  body main .introduction .content .talking .dialog {
+    box-shadow: 1.5rem 1.5rem 0 0 #0d0d0d;
+  }
+  body main .introduction .content .talking .dialog .text1, body main .introduction .content .talking .dialog .text2 {
+    padding: 5% 2rem;
+  }
+  body main .introduction .content .talking .dialog .text1 h5, body main .introduction .content .talking .dialog .text2 h5 {
+    margin-bottom: 5.5rem;
+    font-size: 5rem;
+    text-align: center;
+  }
+  body main .introduction .content .talking .dialog .text1 p, body main .introduction .content .talking .dialog .text2 p {
+    font-size: 4rem;
+    line-height: 6rem;
+    font-weight: 400;
+    text-align: center;
+  }
+}/*# sourceMappingURL=media.css.map */

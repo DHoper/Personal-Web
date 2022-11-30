@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');
+@import url('media.css');
 
 @font-face {
     font-family: 'Monumentextended';
@@ -151,7 +152,7 @@ main {
     overflow: hidden;
     .banner {
         position: relative;
-        padding: 7% 0 7% 0;
+        padding: 10rem 0 10rem 0;
         background-color: #5fc7ed;
         background-color: #201f1f;
         height: 100vh;
@@ -160,16 +161,15 @@ main {
 
         .text {
             height: 100%;
-            padding-left: 5%;
+            padding-left: 12vw;
             margin: auto;
 
             h1 {
-                text-align: center;
+                display: block;
                 font-family: JetBrains Mono, monospace;
                 color: #FFFD82;
                 position: relative;
                 font-size: 2.5rem;
-                margin: 0;
 
                 &>span:nth-child(1) {
                     color: #e06c75;
@@ -193,20 +193,20 @@ main {
                 }
             }
 
-            h2 {
+            h2:first-of-type {
+                margin-top: 3rem;
+            }
 
+            h2 {
                 font-size: 8rem;
                 line-height: 10.8rem;
-                margin: 3rem 0 0 10.5%;
+                margin: 2rem 0 0 0;
                 font-family: 'chinson', serif;
                 font-family: 'Monumentextended', serif;
                 letter-spacing: 1.5rem;
                 color: rgb(46, 46, 46);
                 // transform: scaleY(.9);
                 color: rgb(236, 233, 233);
-                // color: #C9F9FF;
-                // text-shadow: 0.1rem .3rem rgb(116, 119, 120);
-
             }
 
             p {
@@ -293,9 +293,9 @@ main {
 
         .marquee {
             display: flex;
-            // justify-content: center;
+            align-items: center;
             width: 100vw;
-            height: 15vh;
+            padding: .5rem 0;
             border-bottom: #0d0d0d .3rem solid;
 
             .text1,
@@ -305,13 +305,13 @@ main {
                 transform-style: preserve-3d;
 
                 h1 {
-                    font-size: 8vw;
-                    line-height: 8vw;
+                    font-size: 10rem;
+                    line-height: 10rem;
                     font-weight: 600;
                     font-family: Monumentextended, serif;
                     -webkit-text-stroke: .0325rem #0d0d0d;
-                    margin: 0 4rem;
                     color: #fff;
+                    margin: 0 5rem;
                 }
 
                 h1:first-child {
@@ -332,7 +332,7 @@ main {
                 height: 50vh;
                 border-bottom: #0d0d0d .3rem solid;
                 background-color: #fff;
-                padding: 15rem 0;
+                padding: 20rem 0;
 
                 .me {
                     position: relative;
@@ -342,6 +342,8 @@ main {
                     display: flex;
                     justify-content: center;
                     border: #0d0d0d .3rem solid;
+                    box-shadow: 0.35rem 0.35rem 0 0 #0d0d0d;
+                    margin-right: 3rem;
 
                     .border {
                         position: absolute;
@@ -406,7 +408,7 @@ main {
             }
 
             .list {
-                width: 70rem;
+                width: 85rem;
                 margin: auto;
                 background-color: #fff;
 
@@ -420,11 +422,11 @@ main {
                         height: 5rem;
                         border: #0d0d0d .1rem solid;
                         border-top: none;
-                        font-family: chinson, serif;
+                        // font-family: chinson, serif;
 
                         span {
-                            font-size: 2.3rem;
-                            font-weight: 500;
+                            font-size: 1.8rem;
+                            font-weight: 600;
                             text-align: center;
                             letter-spacing: 5rem;
                             margin-left: 3rem;
@@ -468,13 +470,13 @@ main {
                             align-items: center;
                             font-weight: 600;
                             font-size: 1.4rem;
-                            line-height: 2rem;
+                            line-height: 3rem;
                             text-align: center;
                             color: black;
 
                             img {
                                 position: absolute;
-                                top: .6rem;
+                                top: 1.1rem;
                                 left: -1.2rem;
                                 width: .7rem;
                                 height: .7rem;
@@ -486,7 +488,7 @@ main {
 
                     .foldup {
                         transition: all 1s ease-in-out;
-                        height: 10rem;
+                        height: 15rem;
                         border: #0d0d0d .1rem solid;
                         border-top: none;
                     }
@@ -504,11 +506,12 @@ main {
 
         .marquee2 {
             display: flex;
-            // justify-content: center;
+            align-items: center;
             width: 100vw;
-            height: 15vh;
             border-top: #0d0d0d .3rem solid;
             background-color: #fff;
+            padding: .5rem 0;
+            background-color: #ffcb46;
     
             .text1,
             .text2 {
@@ -517,18 +520,18 @@ main {
                 transform-style: preserve-3d;
     
                 h1 {
-                    font-size: 8vw;
-                    line-height: 8vw;
+                    font-size: 10rem;
+                    line-height: 10rem;
                     font-weight: 600;
                     font-family: Monumentextended, serif;
                     -webkit-text-stroke: .0325rem #0d0d0d;
-                    margin: 0 4rem;
+                    margin: 0 5rem;
                     color: #fff;
-                    // color: #0d0d0d;
+                    color: #0d0d0d;
                 }
     
                 h1:first-child {
-                    color: #0d0d0d;
+                    color: #ffcb46;
                 }
             }
         }
@@ -596,8 +599,8 @@ main {
                     flex-direction: column;
                     align-items: center;
                     // justify-content: center;
-                    width: 70rem;
-                    height: 40rem;
+                    width: 100%;
+                    height: 100%;
                     background-color: #ff81cc;
                     border-radius: 2rem;
                     border: #201f1f solid .2rem;
@@ -627,8 +630,8 @@ main {
                     position: absolute;
                     top: .25rem;
                     left: 1.75rem;
-                    width: 70rem;
-                    height: 40rem;
+                    width: 100%;
+                    height: 100%;
                     padding: 1.5rem 5rem;
                     background-color: #fff;
                     border-radius: 2rem;
@@ -636,6 +639,7 @@ main {
                     transition: all .6s ease-in-out;
                     margin: 0 auto;
                     overflow: hidden;
+                    // animation: cardBHint 1s ease-in-out infinite;
     
                     h1 {
                         font-size: 4.5rem;
@@ -748,6 +752,7 @@ main {
                 border-radius: 50%;
                 border: #0d0d0d .1rem solid;
                 background-color: #42F2F7;
+                box-shadow: .25rem .25rem 0 0 #0d0d0d;
             }
 
             h2 {
@@ -777,7 +782,7 @@ main {
             .line {
                 width: 100%;
                 border-top: #0d0d0d .2rem solid;
-                margin: 1.4rem 0;     
+                margin: 1.4rem 0;    
             }
 
             a {
@@ -939,6 +944,18 @@ main {
     }
 }
 
+// @keyframes cardBHint {
+//     0% {
+//         transform: translate3d(0, 0, 0);
+//     }
+//     70% {
+//         transform: translate3d(0, 0, 0);
+//     }
+//     100% {
+//         transform: translate3d(3.75rem, 0, 0);
+//     }
+// }
+
 @keyframes cardBBack {
     0% {
         transform: translate3d(0, 0, 0);
@@ -954,41 +971,4 @@ main {
         z-index: 0;
     }
 }
-
-@media screen and (max-width: 1450px) {
-    html {
-        font-size: 16px !important;
-    }
-}
-
-@media screen and (max-width: 1370px) {
-    html {
-        font-size: 12px !important;
-    }
-}
-
-@media screen and (max-width: 1030px) {
-    html {
-        font-size: 10px !important;
-    }
-}
-
-@media screen and (max-width: 770px) {
-    html {
-        font-size: 6px !important;
-    }
-}
-
-@media screen and (max-width: 580px) {
-    html {
-        font-size: 6px !important;
-    }
-}
-
-@media screen and (max-width: 380px) {
-    html {
-        font-size: 6px !important;
-    }
-}
-
 

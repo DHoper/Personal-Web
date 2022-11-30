@@ -46,11 +46,12 @@ window.onscroll = function () {
 
 //----inner摺疊效果-------------------------------------------------------------//
 const pickers = document.querySelectorAll('.innerPicker');
-pickers.forEach((item, index) => {
+const outer = document.querySelectorAll('.outer');
+outer.forEach((item, index) => {
     item.addEventListener('click', () => {
-        item.classList.toggle('pickup');
-        item.classList.toggle('pickdown');
-        const inner = item.parentNode.parentNode.parentNode.children[1];
+        pickers[index].classList.toggle('pickup');
+        pickers[index].classList.toggle('pickdown');
+        const inner = item.parentNode.children[1];
         inner.classList.toggle('foldup');
         inner.classList.toggle('folddown');
     })
