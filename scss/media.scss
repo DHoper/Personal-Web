@@ -408,6 +408,9 @@
             .marquee,.marquee2 {
                 border-bottom: #0d0d0d .5rem solid !important;
                 padding: 2.5rem 0 !important;
+                h1 {
+                    -webkit-text-stroke: 0.2rem #0d0d0d;
+                }
             }
 
             .project {
@@ -711,6 +714,7 @@
 
                 h1 {
                     font-size: 20rem !important;
+                    -webkit-text-stroke: 0.2rem #0d0d0d;
                 }
             }
 

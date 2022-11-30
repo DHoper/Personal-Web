@@ -280,6 +280,9 @@
     border-bottom: #0d0d0d 0.5rem solid !important;
     padding: 2.5rem 0 !important;
   }
+  body main .marquee h1, body main .marquee2 h1 {
+    -webkit-text-stroke: 0.2rem #0d0d0d;
+  }
   body main .project {
     flex-direction: column;
     width: 100%;
@@ -508,6 +511,7 @@
   }
   body main .marquee h1, body main .marquee2 h1 {
     font-size: 20rem !important;
+    -webkit-text-stroke: 0.2rem #0d0d0d;
   }
   body main .project .c1 .cardBlock .cardB, body main .project .c2 .cardBlock .cardB, body main .project .c3 .cardBlock .cardB {
     padding: 10rem 5rem;
