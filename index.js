@@ -68,10 +68,10 @@ cardB.forEach((item,index) => {
 })
 
 //----aLink子元素阻止冒泡--------------------------------------------------------//
-const button = document.querySelector('.a button');
-button.addEventListener('click', (e) => {
+const buttons = document.querySelectorAll('.a button');
+buttons.forEach(item => item.addEventListener('click', (e) => {
     e.stopPropagation();
-})
+}))
 
 //----project塊左右移動----------------------------------------------------------//
 const project = document.querySelector('.project');
