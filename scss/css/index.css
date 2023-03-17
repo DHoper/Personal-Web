@@ -1,0 +1,785 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap");
+@import url("media.css");
+@font-face {
+  font-family: "Monumentextended";
+  src: url("../assest/fonts/MonumentExtended-Regular.otf"), url("../assest/fonts/MonumentExtended-Ultrabold.otf");
+}
+@font-face {
+  font-family: "Robert";
+  src: url("../assest/fonts/RobertSans-Black.ttf");
+}
+@font-face {
+  font-family: "chinson";
+  src: url("../assest/fonts/清松手寫體1.ttf");
+}
+@font-face {
+  font-family: "henyi";
+  src: url("../assest/fonts/SentyMARUKO.ttf");
+}
+@keyframes animateShadow {
+  0% {
+    text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53D8FB, 3.6666666667px 5.5px #53D8FB, 4px 6px #53D8FB, 4.3333333333px 6.5px #53D8FB, 4.6666666667px 7px #53D8FB, 5px 7.5px #53D8FB, 5px 7.5px #FFF07C, 5.3333333333px 8px #FFF07C, 5.6666666667px 8.5px #FFF07C, 6px 9px #FFF07C, 6.3333333333px 9.5px #FFF07C, 6.6666666667px 10px #FFF07C;
+  }
+  40% {
+    text-shadow: 0px 0px #53D8FB, 0.3333333333px 0.5px #53D8FB, 0.6666666667px 1px #53D8FB, 1px 1.5px #53D8FB, 1.3333333333px 2px #53D8FB, 1.6666666667px 2.5px #53D8FB, 2px 3px #53D8FB, 2.3333333333px 3.5px #53D8FB, 2.6666666667px 4px #53D8FB, 3px 4.5px #53D8FB, 3.3333333333px 5px #53D8FB, 3.3333333333px 5px #FFF07C, 3.6666666667px 5.5px #FFF07C, 4px 6px #FFF07C, 4.3333333333px 6.5px #FFF07C, 4.6666666667px 7px #FFF07C, 5px 7.5px #FFF07C, 5px 7.5px #e06c75, 5.3333333333px 8px #e06c75, 5.6666666667px 8.5px #e06c75, 6px 9px #e06c75, 6.3333333333px 9.5px #e06c75, 6.6666666667px 10px #e06c75;
+  }
+  60% {
+    text-shadow: 0px 0px #FFF07C, 0.3333333333px 0.5px #FFF07C, 0.6666666667px 1px #FFF07C, 1px 1.5px #FFF07C, 1.3333333333px 2px #FFF07C, 1.6666666667px 2.5px #FFF07C, 2px 3px #FFF07C, 2.3333333333px 3.5px #FFF07C, 2.6666666667px 4px #FFF07C, 3px 4.5px #FFF07C, 3.3333333333px 5px #FFF07C, 3.3333333333px 5px #e06c75, 3.6666666667px 5.5px #e06c75, 4px 6px #e06c75, 4.3333333333px 6.5px #e06c75, 4.6666666667px 7px #e06c75, 5px 7.5px #e06c75, 5px 7.5px #53D8FB, 5.3333333333px 8px #53D8FB, 5.6666666667px 8.5px #53D8FB, 6px 9px #53D8FB, 6.3333333333px 9.5px #53D8FB, 6.6666666667px 10px #53D8FB;
+  }
+  100% {
+    text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53D8FB, 3.6666666667px 5.5px #53D8FB, 4px 6px #53D8FB, 4.3333333333px 6.5px #53D8FB, 4.6666666667px 7px #53D8FB, 5px 7.5px #53D8FB, 5px 7.5px #FFF07C, 5.3333333333px 8px #FFF07C, 5.6666666667px 8.5px #FFF07C, 6px 9px #FFF07C, 6.3333333333px 9.5px #FFF07C, 6.6666666667px 10px #FFF07C;
+  }
+}
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  cursor: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  background-color: #F2F4F3;
+  border-bottom: 0.5px solid #0d0d0d;
+  transition: all 1s ease-in-out;
+}
+nav a {
+  color: black;
+  font-family: Robert, sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0 3rem;
+  cursor: none;
+  text-transform: uppercase;
+}
+nav a:last-child {
+  margin-left: auto;
+  margin-right: 1.5rem;
+}
+nav a:last-child i {
+  font-size: 3rem;
+}
+
+.cursorLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  pointer-events: none;
+  border: 0.45rem solid #0d0d0d;
+}
+.cursorLayer .cursor {
+  position: absolute;
+  z-index: 8;
+  pointer-events: none;
+}
+
+main {
+  overflow: hidden;
+}
+main .banner {
+  position: relative;
+  padding: 10rem 0 10rem 0;
+  background-color: #5fc7ed;
+  background-color: #201f1f;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+main .banner .text {
+  height: 100%;
+  padding-left: 12vw;
+  margin: auto;
+}
+main .banner .text h1 {
+  display: block;
+  font-family: JetBrains Mono, monospace;
+  color: #FFFD82;
+  position: relative;
+  font-size: 2.5rem;
+}
+main .banner .text h1 > span:nth-child(1) {
+  color: #e06c75;
+}
+main .banner .text h1 > span:nth-child(3) {
+  color: #42F2F7;
+}
+main .banner .text h1 > span:nth-child(4) {
+  overflow: hidden;
+  margin: 0px auto;
+  font-weight: 400;
+  text-align: left;
+  font-size: 12.5rem;
+  color: transparent;
+  text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53D8FB, 3.6666666667px 5.5px #53D8FB, 4px 6px #53D8FB, 4.3333333333px 6.5px #53D8FB, 4.6666666667px 7px #53D8FB, 5px 7.5px #53D8FB, 5px 7.5px #FFF07C, 5.3333333333px 8px #FFF07C, 5.6666666667px 8.5px #FFF07C, 6px 9px #FFF07C, 6.3333333333px 9.5px #FFF07C, 6.6666666667px 10px #FFF07C;
+  animation-name: animateShadow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+main .banner .text h2:first-of-type {
+  margin-top: 3rem;
+}
+main .banner .text h2 {
+  font-size: 8rem;
+  line-height: 10.8rem;
+  margin: 2rem 0 0 0;
+  font-family: "chinson", serif;
+  font-family: "Monumentextended", serif;
+  letter-spacing: 1.5rem;
+  color: rgb(46, 46, 46);
+  color: rgb(236, 233, 233);
+}
+main .banner .text p {
+  text-align: center;
+  font-family: "henyi", serif;
+  margin-top: -2rem;
+  color: #fff;
+  font-size: 3rem;
+}
+main .banner .text .arrowBlock {
+  position: absolute;
+  right: 1%;
+  bottom: 1.5%;
+  width: 10vw;
+  height: 10vw;
+}
+main .banner .text .arrowBlock .arrow {
+  width: 60%;
+  height: 60%;
+  filter: invert(11%) sepia(1%) saturate(694%) hue-rotate(315deg) brightness(87%) contrast(80%);
+  filter: invert(99%) sepia(5%) saturate(560%) hue-rotate(176deg) brightness(112%) contrast(83%);
+  animation: arrow 1.4s linear infinite;
+  margin: 20%;
+}
+main .banner .text .arrowBlock .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: invert(11%) sepia(1%) saturate(694%) hue-rotate(315deg) brightness(87%) contrast(80%);
+  filter: invert(99%) sepia(5%) saturate(560%) hue-rotate(176deg) brightness(112%) contrast(83%);
+  animation: spin 12s linear infinite;
+  padding: 0;
+}
+main .banner .text .bug {
+  position: absolute;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 5rem;
+  animation: bug 15s linear infinite 0.5s;
+  transform: translateY(17vh);
+}
+main .banner .text .bug i {
+  font-size: 3rem;
+  filter: invert(99%) sepia(5%) saturate(560%) hue-rotate(176deg) brightness(112%) contrast(83%);
+  line-height: 3rem;
+  animation: bugColor 1.2s linear infinite 0.34s;
+  margin-bottom: -2rem;
+}
+main .banner .text .bug > span {
+  display: block;
+  font-size: 7rem;
+  color: rgb(236, 233, 233);
+  line-height: 2rem;
+}
+main .banner .text .bug .s1 {
+  animation: dot 2.5s linear infinite 0s;
+}
+main .banner .text .bug .s2 {
+  animation: dot 2.5s linear infinite 0.25s;
+}
+main .banner .text .bug .s3 {
+  animation: dot 2.5s linear infinite 0.5s;
+}
+main .introduction {
+  width: 100%;
+}
+main .introduction .marquee {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  padding: 0.5rem 0;
+  border-bottom: #0d0d0d 0.3rem solid;
+}
+main .introduction .marquee .text1,
+main .introduction .marquee .text2 {
+  display: flex;
+  animation: marquee 25s linear infinite;
+  transform-style: preserve-3d;
+}
+main .introduction .marquee .text1 h1,
+main .introduction .marquee .text2 h1 {
+  font-size: 10rem;
+  line-height: 10rem;
+  font-weight: 600;
+  font-family: Monumentextended, serif;
+  -webkit-text-stroke: 0.0325rem #0d0d0d;
+  color: #fff;
+  margin: 0 5rem;
+}
+main .introduction .marquee .text1 h1:first-child,
+main .introduction .marquee .text2 h1:first-child {
+  color: #0d0d0d;
+}
+main .introduction .content {
+  width: 100%;
+  background-color: #0d0d0d;
+}
+main .introduction .content .talking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  border-bottom: #0d0d0d 0.3rem solid;
+  background-color: #fff;
+  padding: 20rem 0;
+}
+main .introduction .content .talking .me {
+  position: relative;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  border: #0d0d0d 0.3rem solid;
+  box-shadow: 0.35rem 0.35rem 0 0 #0d0d0d;
+  margin-right: 3rem;
+}
+main .introduction .content .talking .me .border {
+  position: absolute;
+  bottom: -0.25rem;
+  width: 95%;
+  height: 95%;
+  border: #0d0d0d 0.3rem solid;
+  border-radius: 50%;
+  z-index: -1;
+}
+main .introduction .content .talking .me .imgBlock {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+main .introduction .content .talking .me .imgBlock img {
+  width: 100%;
+}
+main .introduction .content .talking .horn {
+  z-index: 1;
+}
+main .introduction .content .talking .dialog {
+  width: 40vw;
+  height: 35vh;
+  border: #0d0d0d 0.3rem solid;
+  box-shadow: 0.35rem 0.35rem 0 0 #0d0d0d;
+  border-radius: 2rem;
+  margin-left: -0.28rem;
+  overflow: hidden;
+}
+main .introduction .content .talking .dialog .text1,
+main .introduction .content .talking .dialog .text2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5% 7.5%;
+  width: 100%;
+  height: 100%;
+  animation: dialog 12s linear infinite;
+}
+main .introduction .content .talking .dialog h5 {
+  font-size: 2rem;
+  margin-top: 2.5%;
+  margin-bottom: 5%;
+}
+main .introduction .content .talking .dialog p {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-family: chinson, serif;
+}
+main .introduction .content .list {
+  width: 85rem;
+  margin: auto;
+  background-color: #fff;
+}
+main .introduction .content .list .block .outer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5rem;
+  border: #0d0d0d 0.1rem solid;
+  border-top: none;
+}
+main .introduction .content .list .block .outer span {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 5rem;
+  margin-left: 3rem;
+}
+main .introduction .content .list .block .outer a {
+  position: absolute;
+  right: 2.5%;
+}
+main .introduction .content .list .block .outer a img {
+  width: 1.6rem;
+}
+main .introduction .content .list .block .outer .pickup {
+  transition: all 0.8s ease-in-out;
+  transform: rotate(45deg);
+}
+main .introduction .content .list .block .outer .pickdown {
+  transition: all 0.8s ease-in-out;
+  transform: rotate(0deg);
+}
+main .introduction .content .list .block .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12%;
+  width: 100%;
+  background-color: #ffcb46;
+  height: 0;
+  overflow: hidden;
+  font-family: chinson, serif;
+}
+main .introduction .content .list .block .inner p {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  text-align: center;
+  color: black;
+}
+main .introduction .content .list .block .inner p img {
+  position: absolute;
+  top: 1.1rem;
+  left: -1.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.5rem;
+}
+main .introduction .content .list .block .inner p a {
+  color: black;
+}
+main .introduction .content .list .block .foldup {
+  transition: all 1s ease-in-out;
+  height: 15rem;
+  border: #0d0d0d 0.1rem solid;
+  border-top: none;
+}
+main .introduction .content .list .block .folddown {
+  transition: all 1s ease-in-out;
+  height: 0rem;
+  border: #0d0d0d 0.1rem solid;
+  border-top: none;
+  border-bottom: #0d0d0d 0rem solid;
+}
+main .introduction .marquee2 {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  border-top: #0d0d0d 0.3rem solid;
+  background-color: #fff;
+  padding: 0.5rem 0;
+  background-color: #ffcb46;
+}
+main .introduction .marquee2 .text1,
+main .introduction .marquee2 .text2 {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  transform-style: preserve-3d;
+}
+main .introduction .marquee2 .text1 h1,
+main .introduction .marquee2 .text2 h1 {
+  font-size: 10rem;
+  line-height: 10rem;
+  font-weight: 600;
+  font-family: Monumentextended, serif;
+  -webkit-text-stroke: 0.0325rem #0d0d0d;
+  margin: 0 5rem;
+  color: #fff;
+  color: #0d0d0d;
+}
+main .introduction .marquee2 .text1 h1:first-child,
+main .introduction .marquee2 .text2 h1:first-child {
+  color: #ffcb46;
+}
+main .project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0;
+  width: 300%;
+  background-color: #ffcb46;
+  border: #0d0d0d 0.3rem solid;
+  overflow: scroll;
+  transition: all 1.5s ease-in-out;
+  transform: translateX(-33%);
+}
+main .project .c1, main .project .c2, main .project .c3 {
+  position: relative;
+  width: 33.333%;
+  height: 100%;
+  padding: 4rem;
+}
+main .project .c1 .arrowL, main .project .c2 .arrowL, main .project .c3 .arrowL {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 3%;
+  font-size: 5rem;
+  transform: translate3d(0, -50%, 0) rotateY(180deg);
+  transition: all 0.5s ease-in-out;
+}
+main .project .c1 .arrowL:hover, main .project .c2 .arrowL:hover, main .project .c3 .arrowL:hover {
+  transform: translate3d(-20%, -50%, 0) rotateY(180deg);
+}
+main .project .c1 .arrowR, main .project .c2 .arrowR, main .project .c3 .arrowR {
+  position: absolute;
+  display: block;
+  top: 50%;
+  right: 3%;
+  font-size: 5rem;
+  transform: translate3d(0, -50%, 0);
+  transition: all 0.5s ease-in-out;
+}
+main .project .c1 .arrowR:hover, main .project .c2 .arrowR:hover, main .project .c3 .arrowR:hover {
+  transform: translate3d(20%, -50%, 0);
+}
+main .project .c1 .cardBlock, main .project .c2 .cardBlock, main .project .c3 .cardBlock {
+  position: relative;
+  top: 0;
+  margin: auto;
+  width: 70rem;
+  height: 40rem;
+}
+main .project .c1 .cardBlock .cardF, main .project .c2 .cardBlock .cardF, main .project .c3 .cardBlock .cardF {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ff81cc;
+  border-radius: 2rem;
+  border: #201f1f solid 0.2rem;
+  z-index: 1;
+  margin: 0 auto;
+}
+main .project .c1 .cardBlock .cardF h1, main .project .c2 .cardBlock .cardF h1, main .project .c3 .cardBlock .cardF h1 {
+  font-size: 4rem;
+  font-family: chinson, serif;
+  margin-top: 1.5rem;
+}
+main .project .c1 .cardBlock .cardF img, main .project .c2 .cardBlock .cardF img, main .project .c3 .cardBlock .cardF img {
+  margin-top: 0.5rem;
+  width: 75%;
+  height: max-content;
+  border-radius: 2rem;
+  border: #201f1f solid 0.25rem;
+  margin-bottom: 0%;
+  object-fit: fill;
+  display: block;
+}
+main .project .c1 .cardBlock .cardB, main .project .c2 .cardBlock .cardB, main .project .c3 .cardBlock .cardB {
+  position: absolute;
+  top: 0.25rem;
+  left: 1.75rem;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 5rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  border: #201f1f solid 0.2rem;
+  transition: all 0.6s ease-in-out;
+  margin: 0 auto;
+  overflow: hidden;
+}
+main .project .c1 .cardBlock .cardB h1, main .project .c2 .cardBlock .cardB h1, main .project .c3 .cardBlock .cardB h1 {
+  font-size: 4.5rem;
+  font-family: chinson, serif;
+  text-align: center;
+}
+main .project .c1 .cardBlock .cardB h3, main .project .c2 .cardBlock .cardB h3, main .project .c3 .cardBlock .cardB h3 {
+  font-size: 2rem;
+  font-family: chinson, serif;
+  margin-top: 0.5rem;
+  margin-bottom: 4.5rem;
+  text-align: center;
+}
+main .project .c1 .cardBlock .cardB p, main .project .c2 .cardBlock .cardB p, main .project .c3 .cardBlock .cardB p {
+  font-size: 1.5rem;
+  font-family: chinson, serif;
+  text-align: center;
+}
+main .project .c1 .cardBlock .cardB .buttonBlock, main .project .c2 .cardBlock .cardB .buttonBlock, main .project .c3 .cardBlock .cardB .buttonBlock {
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+main .project .c1 .cardBlock .cardB .buttonBlock > a button, main .project .c2 .cardBlock .cardB .buttonBlock > a button, main .project .c3 .cardBlock .cardB .buttonBlock > a button {
+  font-family: chinson, serif;
+  font-size: 2.5rem;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  border: #4a4848 solid 0.2rem;
+  box-shadow: 0.4rem 0.4rem 0 0 #302f2f;
+  margin: 0 5rem;
+  transition: all 0.3s ease-in-out;
+}
+main .project .c1 .cardBlock .cardB .buttonBlock > a button:hover, main .project .c2 .cardBlock .cardB .buttonBlock > a button:hover, main .project .c3 .cardBlock .cardB .buttonBlock > a button:hover {
+  transform: scale(1.1);
+  background-color: #302f2f;
+  color: #fff;
+  border: #fff solid 0.2rem;
+}
+main .project .c1 .cardBlock .cardB:hover, main .project .c2 .cardBlock .cardB:hover, main .project .c3 .cardBlock .cardB:hover {
+  left: 3.75rem;
+}
+main .project .c1 .cardBlock .cardB.active, main .project .c2 .cardBlock .cardB.active, main .project .c3 .cardBlock .cardB.active {
+  animation: cardB 1.5s ease-in-out forwards;
+}
+main .project .c1 .cardBlock .cardB.activeBack, main .project .c2 .cardBlock .cardB.activeBack, main .project .c3 .cardBlock .cardB.activeBack {
+  animation: cardBBack 1.5s ease-in-out forwards;
+}
+main .project .c1 .cardBlock .cardB.preventAni, main .project .c2 .cardBlock .cardB.preventAni, main .project .c3 .cardBlock .cardB.preventAni {
+  animation-duration: 0s;
+}
+main .info {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d661ff;
+}
+main .info .contact {
+  position: relative;
+  width: 70%;
+  height: 30vh;
+  border: #0d0d0d 0.2rem solid;
+  border-radius: 2rem;
+  box-shadow: 0.25rem 0.25rem 0 0 #0d0d0d;
+  padding: 2rem 10rem 3rem 10rem;
+  display: flex;
+  flex-direction: column;
+  color: #0d0d0d;
+  background-color: #fff;
+}
+main .info .contact .circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  font-family: chinson, serif;
+  font-weight: 600;
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: #0d0d0d 0.1rem solid;
+  background-color: #42F2F7;
+  box-shadow: 0.25rem 0.25rem 0 0 #0d0d0d;
+}
+main .info .contact h2 {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-family: chinson, serif;
+  margin-bottom: 0.2rem;
+}
+main .info .contact p {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: chinson, serif;
+  font-weight: 400;
+}
+main .info .contact > p:first-of-type {
+  justify-content: space-around;
+}
+main .info .contact .line {
+  width: 100%;
+  border-top: #0d0d0d 0.2rem solid;
+  margin: 1.4rem 0;
+}
+main .info .contact a {
+  color: #0d0d0d;
+  text-decoration: underline;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0turn);
+    filter: invert(69%) sepia(89%) saturate(585%) hue-rotate(162deg) brightness(102%) contrast(97%);
+  }
+  50% {
+    filter: invert(89%) sepia(41%) saturate(619%) hue-rotate(332deg) brightness(106%) contrast(106%);
+  }
+  100% {
+    transform: rotate(1turn);
+    filter: invert(61%) sepia(90%) saturate(911%) hue-rotate(307deg) brightness(89%) contrast(98%);
+  }
+}
+@keyframes arrow {
+  0% {
+    transform: translateY(-7.5%);
+  }
+  0%, 32.9% {
+    filter: invert(69%) sepia(89%) saturate(585%) hue-rotate(162deg) brightness(102%) contrast(97%);
+  }
+  50% {
+    transform: translateY(7.5%);
+  }
+  33%, 65.9% {
+    filter: invert(89%) sepia(41%) saturate(619%) hue-rotate(332deg) brightness(106%) contrast(106%);
+  }
+  100% {
+    transform: translateY(-7.5%);
+  }
+  66%, 100% {
+    filter: invert(61%) sepia(90%) saturate(911%) hue-rotate(307deg) brightness(89%) contrast(98%);
+  }
+}
+@keyframes bug {
+  0% {
+    transform: translateY(17vh);
+  }
+  100% {
+    transform: translateY(-80vh);
+  }
+}
+@keyframes bugColor {
+  0%, 32.9% {
+    filter: invert(69%) sepia(89%) saturate(585%) hue-rotate(162deg) brightness(102%) contrast(97%);
+  }
+  33%, 65.9% {
+    filter: invert(89%) sepia(41%) saturate(619%) hue-rotate(332deg) brightness(106%) contrast(106%);
+  }
+  66%, 99% {
+    filter: invert(61%) sepia(90%) saturate(911%) hue-rotate(307deg) brightness(89%) contrast(98%);
+  }
+}
+@keyframes dot {
+  0% {
+    color: #53D8FB;
+  }
+  24.99% {
+    color: #53D8FB;
+  }
+  25% {
+    color: #201f1f;
+  }
+  49.99% {
+    color: #201f1f;
+  }
+  50% {
+    color: #FFF07C;
+  }
+  74.99% {
+    color: #FFF07C;
+  }
+  75% {
+    color: #201f1f;
+  }
+  100% {
+    color: #201f1f;
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-120%, 0, 0);
+  }
+}
+@keyframes dialog {
+  0%, 45% {
+    transform: translateY(0%);
+  }
+  50%, 95% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
+}
+@keyframes cardB {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(7rem, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    z-index: 1;
+  }
+}
+@keyframes cardBBack {
+  0% {
+    transform: translate3d(0, 0, 0);
+    z-index: 1;
+  }
+  50% {
+    transform: translate3d(7rem, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    z-index: 0;
+  }
+}/*# sourceMappingURL=index.css.map */
