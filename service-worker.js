@@ -1,7 +1,12 @@
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open("TEST").then((cache) => {
-      return cache.addAll(["./assest", "./index.html", "./index.js"]);
+      // 将每个资源路径分别添加，以便更好地捕获错误
+      return Promise.all([
+        cache.add("./assest"),
+        cache.add("./index.html"),
+        cache.add("./index.js"),
+      ]);
     })
   );
 });
