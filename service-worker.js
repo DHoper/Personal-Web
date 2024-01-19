@@ -1,7 +1,7 @@
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open("TEST").then((cache) => {
-      return cache.addAll(["/assest", "/index.html", "/inde.js"]);
+      return cache.addAll(["./assest", "./index.html", "./index.js"]);
     })
   );
 });
