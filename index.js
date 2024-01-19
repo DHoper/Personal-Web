@@ -19,7 +19,7 @@ function displayNotification() {
     navigator.serviceWorker.getRegistration().then((registration) => {
       const options = {
         body: "測試測試",
-        icon: "icon.png",
+        icon: "./icon.png",
       };
       registration.showNotification("Notification Title", options);
     });
