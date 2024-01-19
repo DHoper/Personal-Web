@@ -2,9 +2,9 @@
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
-      caches.open('your-cache-name').then((cache) => {
+      caches.open('TEST').then((cache) => {
         return cache.addAll([
-          '/path/to/your/static/assets',
+          '//assets',
           '/index.html'
         ]);
       })
