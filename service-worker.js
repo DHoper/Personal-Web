@@ -1,20 +1,26 @@
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open("TEST").then((cache) => {
-      // 将每个资源路径分别添加，以便更好地捕获错误
-      return Promise.all([
-        cache.add("./assest"),
-        cache.add("./index.html"),
-        cache.add("./index.js"),
-      ]);
-    })
-  );
-});
-
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
-});
+    event.waitUntil(
+      caches.open("TEST").then((cache) => {
+        return Promise.all([
+          cache.add("./assest").catch((error) => {
+            console.error("Failed to cache ./assest:", error);
+          }),
+          cache.add("./index.html").catch((error) => {
+            console.error("Failed to cache ./index.html:", error);
+          }),
+          cache.add("./index.js").catch((error) => {
+            console.error("Failed to cache ./index.js:", error);
+          }),
+        ]);
+      })
+    );
+  });
+  
+  self.addEventListener("fetch", (event) => {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  });
+  
