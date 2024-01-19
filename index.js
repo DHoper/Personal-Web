@@ -12,19 +12,18 @@ if ("serviceWorker" in navigator) {
           if (permission === "granted") {
             // 在權限獲取後，即可開始定時推送通知
             alert(333);
+            navigator.serviceWorker.getRegistration().then((registration) => {
+              const options = {
+                body: "測試測試22",
+              };
+              registration.showNotification("Notification Title", options);
+            });
             setInterval(displayNotification, 10000);
           }
         });
       } else {
         // 如果權限已經被授予，即可開始定時推送通知
         alert(555);
-        navigator.serviceWorker.getRegistration().then((registration) => {
-          const options = {
-            body: "測試測試22",
-            icon: "./icon.png",
-          };
-          registration.showNotification("Notification Title", options);
-        });
         setInterval(displayNotification, 10000);
       }
     })
@@ -35,18 +34,31 @@ if ("serviceWorker" in navigator) {
 
 // 定義推送通知的函數
 function displayNotification() {
-  alert("定期推送開始");
+  alert("試圖顯示通知"); // 添加这行以在控制台中记录尝试显示通知的信息
+
   if (Notification.permission === "granted") {
-    alert("定期推送開始IF");
+    alert("通知權限已授予"); // 添加这行以在控制台中记录通知权限已被授予的信息
+
     navigator.serviceWorker.getRegistration().then((registration) => {
       const options = {
-        body: "測試測試",
+        body: "測試測試 - 更豐富的通知內容", // 修改通知内容
         icon: "./icon.png",
+        vibrate: [200, 100, 200], // 添加震动效果
+        badge: "./icon.png", // 添加图标徽章
+        image: "./icon.png", // 添加通知图像
       };
-      registration.showNotification("Notification Title", options);
+
+      registration
+        .showNotification("Notification Title", options)
+        .then(() => {
+          alert("通知顯示成功"); // 添加这行以在控制台中记录通知显示成功的信息
+        })
+        .catch((error) => {
+          console.error("通知顯示錯誤:", error); // 添加这行以在控制台中记录通知显示错误的信息
+        });
     });
   } else {
-    alert("定期推送開始NO");
+    alert("通知權限未授予"); // 添加这行以在控制台中记录通知权限未被授予的信息
   }
 }
 
