@@ -48,10 +48,7 @@ function displayNotification() {
 
           const options = {
             body: "測試測試 - 更豐富的通知內容", // 修改通知内容
-            icon: "./icon.png",
             vibrate: [200, 100, 200], // 添加震动效果
-            badge: "./badge.png", // 添加图标徽章
-            image: "./image.png", // 添加通知图像
           };
 
           registration
