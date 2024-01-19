@@ -66,6 +66,8 @@ function displayNotification() {
       // 使用 pushSubscription 发送推送通知
       registration.showNotification("Notification Title", options);
     });
+  } else if (!pushSubscription) {
+    alert("pushSubscriptionh錯誤");
   } else {
     alert("通知權限未授予或推送訂閱未完成");
   }
