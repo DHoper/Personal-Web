@@ -24,6 +24,7 @@ if ("serviceWorker" in navigator) {
           })
           .then((subscription) => {
             pushSubscription = subscription;
+            console.log(subscription);
             setInterval(displayNotification, 10000);
           })
           .catch((error) => {
