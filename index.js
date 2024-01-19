@@ -39,25 +39,31 @@ function displayNotification() {
   if (Notification.permission === "granted") {
     alert("通知權限已授予"); // 添加这行以在控制台中记录通知权限已被授予的信息
 
-    navigator.serviceWorker.getRegistration().then((registration) => {
-      const options = {
-        body: "測試測試 - 更豐富的通知內容", // 修改通知内容
-        icon: "./icon.png",
-        vibrate: [200, 100, 200], // 添加震动效果
-        badge: "./badge.png", // 添加图标徽章
-        image: "./image.png", // 添加通知图像
-      };
+    navigator.serviceWorker
+      .getRegistration()
+      .then((registration) => {
+        alert("進入registration");
+        const options = {
+          body: "測試測試 - 更豐富的通知內容", // 修改通知内容
+          icon: "./icon.png",
+          vibrate: [200, 100, 200], // 添加震动效果
+          badge: "./badge.png", // 添加图标徽章
+          image: "./image.png", // 添加通知图像
+        };
 
-      registration
-        .showNotification("Notification Title", options)
-        .then(() => {
-          alert("通知顯示成功"); // 添加这行以在控制台中记录通知显示成功的信息
-        })
-        .catch((error) => {
-          alert("通知顯示失敗");
-          console.error("通知顯示錯誤:", error); // 添加这行以在控制台中记录通知显示错误的信息
-        });
-    });
+        registration
+          .showNotification("Notification Title", options)
+          .then(() => {
+            alert("通知顯示成功"); // 添加这行以在控制台中记录通知显示成功的信息
+          })
+          .catch((error) => {
+            alert("通知顯示失敗");
+            console.error("通知顯示錯誤:", error); // 添加这行以在控制台中记录通知显示错误的信息
+          });
+      })
+      .catch((err) => {
+        alert(err);
+      });
   } else {
     alert("通知權限未授予"); // 添加这行以在控制台中记录通知权限未被授予的信息
   }
