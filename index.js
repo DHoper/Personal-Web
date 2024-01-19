@@ -42,27 +42,36 @@ function displayNotification() {
     navigator.serviceWorker
       .getRegistration()
       .then((registration) => {
-        alert("進入registration");
-        const options = {
-          body: "測試測試 - 更豐富的通知內容", // 修改通知内容
-          icon: "./icon.png",
-          vibrate: [200, 100, 200], // 添加震动效果
-          badge: "./badge.png", // 添加图标徽章
-          image: "./image.png", // 添加通知图像
-        };
+        console.log(77779, registration);
+        alert("進入 registration");
 
-        registration
-          .showNotification("Notification Title", options)
-          .then(() => {
-            alert("通知顯示成功"); // 添加这行以在控制台中记录通知显示成功的信息
-          })
-          .catch((error) => {
-            alert("通知顯示失敗");
-            console.error("通知顯示錯誤:", error); // 添加这行以在控制台中记录通知显示错误的信息
-          });
+        if (registration) {
+          alert("registration 不是 undefined");
+
+          const options = {
+            body: "測試測試 - 更豐富的通知內容", // 修改通知内容
+            icon: "./icon.png",
+            vibrate: [200, 100, 200], // 添加震动效果
+            badge: "./badge.png", // 添加图标徽章
+            image: "./image.png", // 添加通知图像
+          };
+
+          registration
+            .showNotification("Notification Title", options)
+            .then(() => {
+              alert("通知顯示成功"); // 添加这行以在控制台中记录通知显示成功的信息
+            })
+            .catch((error) => {
+              alert("通知顯示失敗");
+              console.error("通知顯示錯誤:", error); // 添加这行以在控制台中记录通知显示错误的信息
+            });
+        } else {
+          alert("registration 是 undefined");
+        }
       })
       .catch((err) => {
-        alert(err);
+        alert("進入 catch");
+        console.error("获取 registration 时发生错误:", err);
       });
   } else {
     alert("通知權限未授予"); // 添加这行以在控制台中记录通知权限未被授予的信息
