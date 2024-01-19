@@ -2,13 +2,13 @@ self.addEventListener("install", (event) => {
     event.waitUntil(
       caches.open("TEST").then((cache) => {
         return Promise.all([
-          cache.add("./assest").catch((error) => {
+          cache.add("/assest").catch((error) => {
             console.error("Failed to cache ./assest:", error);
           }),
-          cache.add("./index.html").catch((error) => {
+          cache.add("/index.html").catch((error) => {
             console.error("Failed to cache ./index.html:", error);
           }),
-          cache.add("./index.js").catch((error) => {
+          cache.add("/index.js").catch((error) => {
             console.error("Failed to cache ./index.js:", error);
           }),
         ]);
