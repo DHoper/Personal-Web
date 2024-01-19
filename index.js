@@ -1,17 +1,14 @@
-alert(navigator, 99999);
+
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("./service-worker.js")
     .then((registration) => {
-      alert("Service Worker registered with scope:", registration.scope);
-      alert(777);
 
       // 請求推送權限
       if (Notification.permission !== "granted") {
         Notification.requestPermission().then((permission) => {
           if (permission === "granted") {
             // 在權限獲取後，即可開始定時推送通知
-            alert(333);
             navigator.serviceWorker.getRegistration().then((registration) => {
               const options = {
                 body: "測試測試22",
@@ -23,7 +20,6 @@ if ("serviceWorker" in navigator) {
         });
       } else {
         // 如果權限已經被授予，即可開始定時推送通知
-        alert(555);
         setInterval(displayNotification, 10000);
       }
     })
@@ -41,35 +37,28 @@ function displayNotification() {
       .getRegistration()
       .then((registration) => {
         console.log(77779, registration);
-        alert("進入 registration");
 
         if (registration) {
-          alert("registration 不是 undefined");
 
           const options = {
-            body: "測試測試 - 更豐富的通知內容", // 修改通知内容
+            body: "該接小孩囉", // 修改通知内容
             vibrate: [200, 100, 200], // 添加震动效果
           };
 
           registration
             .showNotification("Notification Title", options)
             .then(() => {
-              alert("通知顯示成功"); // 添加这行以在控制台中记录通知显示成功的信息
             })
             .catch((error) => {
-              alert("通知顯示失敗");
               console.error("通知顯示錯誤:", error); // 添加这行以在控制台中记录通知显示错误的信息
             });
         } else {
-          alert("registration 是 undefined");
         }
       })
       .catch((err) => {
-        alert("進入 catch");
         console.error("获取 registration 时发生错误:", err);
       });
   } else {
-    alert("通知權限未授予"); // 添加这行以在控制台中记录通知权限未被授予的信息
   }
 }
 
