@@ -1,47 +1,31 @@
-console.log(navigator, 99999);
-let pushSubscription; // 用于存储推送订阅对象
-
+alert(navigator, 99999);
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("./service-worker.js")
     .then((registration) => {
-      console.log("Service Worker registered with scope:", registration.scope);
+      alert("Service Worker registered with scope:", registration.scope);
       alert(777);
 
       // 請求推送權限
       if (Notification.permission !== "granted") {
-        Notification.requestPermission()
-          .then((permission) => {
-            if (permission === "granted") {
-              // 在權限獲取後，即可開始定時推送通知
-              alert(333);
-              return registration.pushManager.subscribe({
-                userVisibleOnly: true,
-                applicationServerKey:
-                  "BPPGnWQLYY1hC_5OBZV0SDqQ3dKcGQc79b08RrvE2x4CsGVmlgH0Ni2nWDx6V1El2kQOFQZiMh-bYnLpZ1NAUvI",
-              });
-            }
-          })
-          .then((subscription) => {
-            pushSubscription = subscription;
-            console.log(subscription);
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            // 在權限獲取後，即可開始定時推送通知
+            alert(333);
+            navigator.serviceWorker.getRegistration().then((registration) => {
+              const options = {
+                body: "測試測試22",
+              };
+              registration.showNotification("Notification Title", options);
+            });
             setInterval(displayNotification, 10000);
-          })
-          .catch((error) => {
-            console.error("推送訂閱錯誤:", error);
-          });
+          }
+        });
       } else {
         // 如果權限已經被授予，即可開始定時推送通知
         alert(555);
-        return registration.pushManager.subscribe({
-          userVisibleOnly: true,
-          applicationServerKey: yourApplicationServerKey,
-        });
+        setInterval(displayNotification, 10000);
       }
-    })
-    .then((subscription) => {
-      pushSubscription = subscription;
-      setInterval(displayNotification, 10000);
     })
     .catch((error) => {
       console.error("服務註冊錯誤:", error);
@@ -50,27 +34,32 @@ if ("serviceWorker" in navigator) {
 
 // 定義推送通知的函數
 function displayNotification() {
-  alert("試圖顯示通知");
+  alert("試圖顯示通知"); // 添加这行以在控制台中记录尝试显示通知的信息
 
-  if (pushSubscription && Notification.permission === "granted") {
-    alert("通知權限已授予");
+  if (Notification.permission === "granted") {
+    alert("通知權限已授予"); // 添加这行以在控制台中记录通知权限已被授予的信息
 
     navigator.serviceWorker.getRegistration().then((registration) => {
       const options = {
-        body: "測試測試 - 更豐富的通知內容",
+        body: "測試測試 - 更豐富的通知內容", // 修改通知内容
         icon: "./icon.png",
-        vibrate: [200, 100, 200],
-        badge: "./icon.png",
-        image: "./icon.png",
+        vibrate: [200, 100, 200], // 添加震动效果
+        badge: "./badge.png", // 添加图标徽章
+        image: "./image.png", // 添加通知图像
       };
 
-      // 使用 pushSubscription 发送推送通知
-      registration.showNotification("Notification Title", options);
+      registration
+        .showNotification("Notification Title", options)
+        .then(() => {
+          alert("通知顯示成功"); // 添加这行以在控制台中记录通知显示成功的信息
+        })
+        .catch((error) => {
+          alert("通知顯示失敗");
+          console.error("通知顯示錯誤:", error); // 添加这行以在控制台中记录通知显示错误的信息
+        });
     });
-  } else if (!pushSubscription) {
-    alert("pushSubscriptionh錯誤");
   } else {
-    alert("通知權限未授予或推送訂閱未完成");
+    alert("通知權限未授予"); // 添加这行以在控制台中记录通知权限未被授予的信息
   }
 }
 
