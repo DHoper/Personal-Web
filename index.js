@@ -34,10 +34,8 @@ if ("serviceWorker" in navigator) {
 
 // 定義推送通知的函數
 function displayNotification() {
-  alert("試圖顯示通知"); // 添加这行以在控制台中记录尝试显示通知的信息
 
   if (Notification.permission === "granted") {
-    alert("通知權限已授予"); // 添加这行以在控制台中记录通知权限已被授予的信息
 
     navigator.serviceWorker
       .getRegistration()
