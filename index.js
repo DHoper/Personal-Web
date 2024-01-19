@@ -11,11 +11,20 @@ if ("serviceWorker" in navigator) {
         Notification.requestPermission().then((permission) => {
           if (permission === "granted") {
             // 在權限獲取後，即可開始定時推送通知
+            alert(333);
             setInterval(displayNotification, 10000);
           }
         });
       } else {
         // 如果權限已經被授予，即可開始定時推送通知
+        alert(555);
+        navigator.serviceWorker.getRegistration().then((registration) => {
+          const options = {
+            body: "測試測試22",
+            icon: "./icon.png",
+          };
+          registration.showNotification("Notification Title", options);
+        });
         setInterval(displayNotification, 10000);
       }
     })
@@ -26,7 +35,9 @@ if ("serviceWorker" in navigator) {
 
 // 定義推送通知的函數
 function displayNotification() {
+  alert("定期推送開始");
   if (Notification.permission === "granted") {
+    alert("定期推送開始IF");
     navigator.serviceWorker.getRegistration().then((registration) => {
       const options = {
         body: "測試測試",
@@ -34,6 +45,8 @@ function displayNotification() {
       };
       registration.showNotification("Notification Title", options);
     });
+  } else {
+    alert("定期推送開始NO");
   }
 }
 
