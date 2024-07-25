@@ -134,9 +134,6 @@
     font-size: 2rem;
     line-height: 2.8rem;
   }
-  body main .introduction .content .list .block .foldup {
-    height: 18rem;
-  }
   body main .project .c1 .cardBlock, body main .project .c2 .cardBlock, body main .project .c3 .cardBlock {
     width: 80rem;
     height: 45rem;

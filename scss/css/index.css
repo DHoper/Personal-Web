@@ -3,32 +3,32 @@
 @import url("media.css");
 @font-face {
   font-family: "Monumentextended";
-  src: url("../assest/fonts/MonumentExtended-Regular.otf"), url("../assest/fonts/MonumentExtended-Ultrabold.otf");
+  src: url("/assets/fonts/MonumentExtended-Regular.otf"), url("/assets/fonts/MonumentExtended-Ultrabold.otf");
 }
 @font-face {
   font-family: "Robert";
-  src: url("../assest/fonts/RobertSans-Black.ttf");
+  src: url("/assets/fonts/RobertSans-Black.ttf");
 }
 @font-face {
   font-family: "chinson";
-  src: url("../assest/fonts/清松手寫體1.ttf");
+  src: url("/assets/fonts/清松手寫體1.ttf");
 }
 @font-face {
   font-family: "henyi";
-  src: url("../assest/fonts/SentyMARUKO.ttf");
+  src: url("/assets/fonts/SentyMARUKO.ttf");
 }
 @keyframes animateShadow {
   0% {
-    text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53D8FB, 3.6666666667px 5.5px #53D8FB, 4px 6px #53D8FB, 4.3333333333px 6.5px #53D8FB, 4.6666666667px 7px #53D8FB, 5px 7.5px #53D8FB, 5px 7.5px #FFF07C, 5.3333333333px 8px #FFF07C, 5.6666666667px 8.5px #FFF07C, 6px 9px #FFF07C, 6.3333333333px 9.5px #FFF07C, 6.6666666667px 10px #FFF07C;
+    text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53d8fb, 3.6666666667px 5.5px #53d8fb, 4px 6px #53d8fb, 4.3333333333px 6.5px #53d8fb, 4.6666666667px 7px #53d8fb, 5px 7.5px #53d8fb, 5px 7.5px #fff07c, 5.3333333333px 8px #fff07c, 5.6666666667px 8.5px #fff07c, 6px 9px #fff07c, 6.3333333333px 9.5px #fff07c, 6.6666666667px 10px #fff07c;
   }
   40% {
-    text-shadow: 0px 0px #53D8FB, 0.3333333333px 0.5px #53D8FB, 0.6666666667px 1px #53D8FB, 1px 1.5px #53D8FB, 1.3333333333px 2px #53D8FB, 1.6666666667px 2.5px #53D8FB, 2px 3px #53D8FB, 2.3333333333px 3.5px #53D8FB, 2.6666666667px 4px #53D8FB, 3px 4.5px #53D8FB, 3.3333333333px 5px #53D8FB, 3.3333333333px 5px #FFF07C, 3.6666666667px 5.5px #FFF07C, 4px 6px #FFF07C, 4.3333333333px 6.5px #FFF07C, 4.6666666667px 7px #FFF07C, 5px 7.5px #FFF07C, 5px 7.5px #e06c75, 5.3333333333px 8px #e06c75, 5.6666666667px 8.5px #e06c75, 6px 9px #e06c75, 6.3333333333px 9.5px #e06c75, 6.6666666667px 10px #e06c75;
+    text-shadow: 0px 0px #53d8fb, 0.3333333333px 0.5px #53d8fb, 0.6666666667px 1px #53d8fb, 1px 1.5px #53d8fb, 1.3333333333px 2px #53d8fb, 1.6666666667px 2.5px #53d8fb, 2px 3px #53d8fb, 2.3333333333px 3.5px #53d8fb, 2.6666666667px 4px #53d8fb, 3px 4.5px #53d8fb, 3.3333333333px 5px #53d8fb, 3.3333333333px 5px #fff07c, 3.6666666667px 5.5px #fff07c, 4px 6px #fff07c, 4.3333333333px 6.5px #fff07c, 4.6666666667px 7px #fff07c, 5px 7.5px #fff07c, 5px 7.5px #e06c75, 5.3333333333px 8px #e06c75, 5.6666666667px 8.5px #e06c75, 6px 9px #e06c75, 6.3333333333px 9.5px #e06c75, 6.6666666667px 10px #e06c75;
   }
   60% {
-    text-shadow: 0px 0px #FFF07C, 0.3333333333px 0.5px #FFF07C, 0.6666666667px 1px #FFF07C, 1px 1.5px #FFF07C, 1.3333333333px 2px #FFF07C, 1.6666666667px 2.5px #FFF07C, 2px 3px #FFF07C, 2.3333333333px 3.5px #FFF07C, 2.6666666667px 4px #FFF07C, 3px 4.5px #FFF07C, 3.3333333333px 5px #FFF07C, 3.3333333333px 5px #e06c75, 3.6666666667px 5.5px #e06c75, 4px 6px #e06c75, 4.3333333333px 6.5px #e06c75, 4.6666666667px 7px #e06c75, 5px 7.5px #e06c75, 5px 7.5px #53D8FB, 5.3333333333px 8px #53D8FB, 5.6666666667px 8.5px #53D8FB, 6px 9px #53D8FB, 6.3333333333px 9.5px #53D8FB, 6.6666666667px 10px #53D8FB;
+    text-shadow: 0px 0px #fff07c, 0.3333333333px 0.5px #fff07c, 0.6666666667px 1px #fff07c, 1px 1.5px #fff07c, 1.3333333333px 2px #fff07c, 1.6666666667px 2.5px #fff07c, 2px 3px #fff07c, 2.3333333333px 3.5px #fff07c, 2.6666666667px 4px #fff07c, 3px 4.5px #fff07c, 3.3333333333px 5px #fff07c, 3.3333333333px 5px #e06c75, 3.6666666667px 5.5px #e06c75, 4px 6px #e06c75, 4.3333333333px 6.5px #e06c75, 4.6666666667px 7px #e06c75, 5px 7.5px #e06c75, 5px 7.5px #53d8fb, 5.3333333333px 8px #53d8fb, 5.6666666667px 8.5px #53d8fb, 6px 9px #53d8fb, 6.3333333333px 9.5px #53d8fb, 6.6666666667px 10px #53d8fb;
   }
   100% {
-    text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53D8FB, 3.6666666667px 5.5px #53D8FB, 4px 6px #53D8FB, 4.3333333333px 6.5px #53D8FB, 4.6666666667px 7px #53D8FB, 5px 7.5px #53D8FB, 5px 7.5px #FFF07C, 5.3333333333px 8px #FFF07C, 5.6666666667px 8.5px #FFF07C, 6px 9px #FFF07C, 6.3333333333px 9.5px #FFF07C, 6.6666666667px 10px #FFF07C;
+    text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53d8fb, 3.6666666667px 5.5px #53d8fb, 4px 6px #53d8fb, 4.3333333333px 6.5px #53d8fb, 4.6666666667px 7px #53d8fb, 5px 7.5px #53d8fb, 5px 7.5px #fff07c, 5.3333333333px 8px #fff07c, 5.6666666667px 8.5px #fff07c, 6px 9px #fff07c, 6.3333333333px 9.5px #fff07c, 6.6666666667px 10px #fff07c;
   }
 }
 html {
@@ -69,7 +69,7 @@ nav {
   height: 10vh;
   display: flex;
   align-items: center;
-  background-color: #F2F4F3;
+  background-color: #f2f4f3;
   border-bottom: 0.5px solid #0d0d0d;
   transition: all 1s ease-in-out;
 }
@@ -126,7 +126,7 @@ main .banner .text {
 main .banner .text h1 {
   display: block;
   font-family: JetBrains Mono, monospace;
-  color: #FFFD82;
+  color: #fffd82;
   position: relative;
   font-size: 2.5rem;
 }
@@ -134,7 +134,7 @@ main .banner .text h1 > span:nth-child(1) {
   color: #e06c75;
 }
 main .banner .text h1 > span:nth-child(3) {
-  color: #42F2F7;
+  color: #42f2f7;
 }
 main .banner .text h1 > span:nth-child(4) {
   overflow: hidden;
@@ -143,7 +143,7 @@ main .banner .text h1 > span:nth-child(4) {
   text-align: left;
   font-size: 12.5rem;
   color: transparent;
-  text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53D8FB, 3.6666666667px 5.5px #53D8FB, 4px 6px #53D8FB, 4.3333333333px 6.5px #53D8FB, 4.6666666667px 7px #53D8FB, 5px 7.5px #53D8FB, 5px 7.5px #FFF07C, 5.3333333333px 8px #FFF07C, 5.6666666667px 8.5px #FFF07C, 6px 9px #FFF07C, 6.3333333333px 9.5px #FFF07C, 6.6666666667px 10px #FFF07C;
+  text-shadow: 0px 0px #e06c75, 0.3333333333px 0.5px #e06c75, 0.6666666667px 1px #e06c75, 1px 1.5px #e06c75, 1.3333333333px 2px #e06c75, 1.6666666667px 2.5px #e06c75, 2px 3px #e06c75, 2.3333333333px 3.5px #e06c75, 2.6666666667px 4px #e06c75, 3px 4.5px #e06c75, 3.3333333333px 5px #e06c75, 3.3333333333px 5px #53d8fb, 3.6666666667px 5.5px #53d8fb, 4px 6px #53d8fb, 4.3333333333px 6.5px #53d8fb, 4.6666666667px 7px #53d8fb, 5px 7.5px #53d8fb, 5px 7.5px #fff07c, 5.3333333333px 8px #fff07c, 5.6666666667px 8.5px #fff07c, 6px 9px #fff07c, 6.3333333333px 9.5px #fff07c, 6.6666666667px 10px #fff07c;
   animation-name: animateShadow;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -344,7 +344,7 @@ main .introduction .content .list .block .outer {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 5rem;
+  min-height: 5rem;
   border: #0d0d0d 0.1rem solid;
   border-top: none;
 }
@@ -382,6 +382,10 @@ main .introduction .content .list .block .inner {
   overflow: hidden;
   font-family: chinson, serif;
 }
+main .introduction .content .list .block .inner h4 {
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+}
 main .introduction .content .list .block .inner p {
   position: relative;
   display: flex;
@@ -405,7 +409,8 @@ main .introduction .content .list .block .inner p a {
 }
 main .introduction .content .list .block .foldup {
   transition: all 1s ease-in-out;
-  height: 15rem;
+  height: fit-content;
+  padding: 2rem 0;
   border: #0d0d0d 0.1rem solid;
   border-top: none;
 }
@@ -459,13 +464,17 @@ main .project {
   transition: all 1.5s ease-in-out;
   transform: translateX(-33%);
 }
-main .project .c1, main .project .c2, main .project .c3 {
+main .project .c1,
+main .project .c2,
+main .project .c3 {
   position: relative;
   width: 33.333%;
   height: 100%;
   padding: 4rem;
 }
-main .project .c1 .arrowL, main .project .c2 .arrowL, main .project .c3 .arrowL {
+main .project .c1 .arrowL,
+main .project .c2 .arrowL,
+main .project .c3 .arrowL {
   position: absolute;
   display: block;
   top: 50%;
@@ -474,10 +483,14 @@ main .project .c1 .arrowL, main .project .c2 .arrowL, main .project .c3 .arrowL 
   transform: translate3d(0, -50%, 0) rotateY(180deg);
   transition: all 0.5s ease-in-out;
 }
-main .project .c1 .arrowL:hover, main .project .c2 .arrowL:hover, main .project .c3 .arrowL:hover {
+main .project .c1 .arrowL:hover,
+main .project .c2 .arrowL:hover,
+main .project .c3 .arrowL:hover {
   transform: translate3d(-20%, -50%, 0) rotateY(180deg);
 }
-main .project .c1 .arrowR, main .project .c2 .arrowR, main .project .c3 .arrowR {
+main .project .c1 .arrowR,
+main .project .c2 .arrowR,
+main .project .c3 .arrowR {
   position: absolute;
   display: block;
   top: 50%;
@@ -486,17 +499,23 @@ main .project .c1 .arrowR, main .project .c2 .arrowR, main .project .c3 .arrowR 
   transform: translate3d(0, -50%, 0);
   transition: all 0.5s ease-in-out;
 }
-main .project .c1 .arrowR:hover, main .project .c2 .arrowR:hover, main .project .c3 .arrowR:hover {
+main .project .c1 .arrowR:hover,
+main .project .c2 .arrowR:hover,
+main .project .c3 .arrowR:hover {
   transform: translate3d(20%, -50%, 0);
 }
-main .project .c1 .cardBlock, main .project .c2 .cardBlock, main .project .c3 .cardBlock {
+main .project .c1 .cardBlock,
+main .project .c2 .cardBlock,
+main .project .c3 .cardBlock {
   position: relative;
   top: 0;
   margin: auto;
   width: 70rem;
   height: 40rem;
 }
-main .project .c1 .cardBlock .cardF, main .project .c2 .cardBlock .cardF, main .project .c3 .cardBlock .cardF {
+main .project .c1 .cardBlock .cardF,
+main .project .c2 .cardBlock .cardF,
+main .project .c3 .cardBlock .cardF {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -509,12 +528,16 @@ main .project .c1 .cardBlock .cardF, main .project .c2 .cardBlock .cardF, main .
   z-index: 1;
   margin: 0 auto;
 }
-main .project .c1 .cardBlock .cardF h1, main .project .c2 .cardBlock .cardF h1, main .project .c3 .cardBlock .cardF h1 {
+main .project .c1 .cardBlock .cardF h1,
+main .project .c2 .cardBlock .cardF h1,
+main .project .c3 .cardBlock .cardF h1 {
   font-size: 4rem;
   font-family: chinson, serif;
   margin-top: 1.5rem;
 }
-main .project .c1 .cardBlock .cardF img, main .project .c2 .cardBlock .cardF img, main .project .c3 .cardBlock .cardF img {
+main .project .c1 .cardBlock .cardF img,
+main .project .c2 .cardBlock .cardF img,
+main .project .c3 .cardBlock .cardF img {
   margin-top: 0.5rem;
   width: 75%;
   height: max-content;
@@ -524,7 +547,9 @@ main .project .c1 .cardBlock .cardF img, main .project .c2 .cardBlock .cardF img
   object-fit: fill;
   display: block;
 }
-main .project .c1 .cardBlock .cardB, main .project .c2 .cardBlock .cardB, main .project .c3 .cardBlock .cardB {
+main .project .c1 .cardBlock .cardB,
+main .project .c2 .cardBlock .cardB,
+main .project .c3 .cardBlock .cardB {
   position: absolute;
   top: 0.25rem;
   left: 1.75rem;
@@ -538,24 +563,32 @@ main .project .c1 .cardBlock .cardB, main .project .c2 .cardBlock .cardB, main .
   margin: 0 auto;
   overflow: hidden;
 }
-main .project .c1 .cardBlock .cardB h1, main .project .c2 .cardBlock .cardB h1, main .project .c3 .cardBlock .cardB h1 {
+main .project .c1 .cardBlock .cardB h1,
+main .project .c2 .cardBlock .cardB h1,
+main .project .c3 .cardBlock .cardB h1 {
   font-size: 4.5rem;
   font-family: chinson, serif;
   text-align: center;
 }
-main .project .c1 .cardBlock .cardB h3, main .project .c2 .cardBlock .cardB h3, main .project .c3 .cardBlock .cardB h3 {
+main .project .c1 .cardBlock .cardB h3,
+main .project .c2 .cardBlock .cardB h3,
+main .project .c3 .cardBlock .cardB h3 {
   font-size: 2rem;
   font-family: chinson, serif;
   margin-top: 0.5rem;
   margin-bottom: 4.5rem;
   text-align: center;
 }
-main .project .c1 .cardBlock .cardB p, main .project .c2 .cardBlock .cardB p, main .project .c3 .cardBlock .cardB p {
+main .project .c1 .cardBlock .cardB p,
+main .project .c2 .cardBlock .cardB p,
+main .project .c3 .cardBlock .cardB p {
   font-size: 1.5rem;
   font-family: chinson, serif;
   text-align: center;
 }
-main .project .c1 .cardBlock .cardB .buttonBlock, main .project .c2 .cardBlock .cardB .buttonBlock, main .project .c3 .cardBlock .cardB .buttonBlock {
+main .project .c1 .cardBlock .cardB .buttonBlock,
+main .project .c2 .cardBlock .cardB .buttonBlock,
+main .project .c3 .cardBlock .cardB .buttonBlock {
   position: absolute;
   left: 0;
   bottom: 3rem;
@@ -563,7 +596,16 @@ main .project .c1 .cardBlock .cardB .buttonBlock, main .project .c2 .cardBlock .
   justify-content: space-around;
   width: 100%;
 }
-main .project .c1 .cardBlock .cardB .buttonBlock > a button, main .project .c2 .cardBlock .cardB .buttonBlock > a button, main .project .c3 .cardBlock .cardB .buttonBlock > a button {
+main .project .c1 .cardBlock .cardB .buttonBlock a,
+main .project .c2 .cardBlock .cardB .buttonBlock a,
+main .project .c3 .cardBlock .cardB .buttonBlock a {
+  display: flex;
+  text-decoration: none;
+  width: fit-content;
+}
+main .project .c1 .cardBlock .cardB .buttonBlock a button,
+main .project .c2 .cardBlock .cardB .buttonBlock a button,
+main .project .c3 .cardBlock .cardB .buttonBlock a button {
   font-family: chinson, serif;
   font-size: 2.5rem;
   border-radius: 2rem;
@@ -572,23 +614,34 @@ main .project .c1 .cardBlock .cardB .buttonBlock > a button, main .project .c2 .
   box-shadow: 0.4rem 0.4rem 0 0 #302f2f;
   margin: 0 5rem;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
-main .project .c1 .cardBlock .cardB .buttonBlock > a button:hover, main .project .c2 .cardBlock .cardB .buttonBlock > a button:hover, main .project .c3 .cardBlock .cardB .buttonBlock > a button:hover {
+main .project .c1 .cardBlock .cardB .buttonBlock a button:hover,
+main .project .c2 .cardBlock .cardB .buttonBlock a button:hover,
+main .project .c3 .cardBlock .cardB .buttonBlock a button:hover {
   transform: scale(1.1);
   background-color: #302f2f;
   color: #fff;
   border: #fff solid 0.2rem;
 }
-main .project .c1 .cardBlock .cardB:hover, main .project .c2 .cardBlock .cardB:hover, main .project .c3 .cardBlock .cardB:hover {
+main .project .c1 .cardBlock .cardB:hover,
+main .project .c2 .cardBlock .cardB:hover,
+main .project .c3 .cardBlock .cardB:hover {
   left: 3.75rem;
 }
-main .project .c1 .cardBlock .cardB.active, main .project .c2 .cardBlock .cardB.active, main .project .c3 .cardBlock .cardB.active {
+main .project .c1 .cardBlock .cardB.active,
+main .project .c2 .cardBlock .cardB.active,
+main .project .c3 .cardBlock .cardB.active {
   animation: cardB 1.5s ease-in-out forwards;
 }
-main .project .c1 .cardBlock .cardB.activeBack, main .project .c2 .cardBlock .cardB.activeBack, main .project .c3 .cardBlock .cardB.activeBack {
+main .project .c1 .cardBlock .cardB.activeBack,
+main .project .c2 .cardBlock .cardB.activeBack,
+main .project .c3 .cardBlock .cardB.activeBack {
   animation: cardBBack 1.5s ease-in-out forwards;
 }
-main .project .c1 .cardBlock .cardB.preventAni, main .project .c2 .cardBlock .cardB.preventAni, main .project .c3 .cardBlock .cardB.preventAni {
+main .project .c1 .cardBlock .cardB.preventAni,
+main .project .c2 .cardBlock .cardB.preventAni,
+main .project .c3 .cardBlock .cardB.preventAni {
   animation-duration: 0s;
 }
 main .info {
@@ -627,7 +680,7 @@ main .info .contact .circle {
   height: 5rem;
   border-radius: 50%;
   border: #0d0d0d 0.1rem solid;
-  background-color: #42F2F7;
+  background-color: #42f2f7;
   box-shadow: 0.25rem 0.25rem 0 0 #0d0d0d;
 }
 main .info .contact h2 {
@@ -715,10 +768,10 @@ main .info .contact a {
 }
 @keyframes dot {
   0% {
-    color: #53D8FB;
+    color: #53d8fb;
   }
   24.99% {
-    color: #53D8FB;
+    color: #53d8fb;
   }
   25% {
     color: #201f1f;
@@ -727,10 +780,10 @@ main .info .contact a {
     color: #201f1f;
   }
   50% {
-    color: #FFF07C;
+    color: #fff07c;
   }
   74.99% {
-    color: #FFF07C;
+    color: #fff07c;
   }
   75% {
     color: #201f1f;
