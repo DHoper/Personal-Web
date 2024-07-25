@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "WILDLENS"
-    ]
+    ],
+    "livePreview.defaultPreviewPath": "/index.html"
 }
