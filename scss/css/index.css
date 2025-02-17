@@ -3,19 +3,19 @@
 @import url("media.css");
 @font-face {
   font-family: "Monumentextended";
-  src: url("./assets/fonts/MonumentExtended-Regular.otf"), url("./assets/fonts/MonumentExtended-Ultrabold.otf");
+  src: url("assets/fonts/MonumentExtended-Regular.otf"), url("assets/fonts/MonumentExtended-Ultrabold.otf");
 }
 @font-face {
   font-family: "Robert";
-  src: url("./assets/fonts/RobertSans-Black.ttf");
+  src: url("assets/fonts/RobertSans-Black.ttf");
 }
 @font-face {
   font-family: "chinson";
-  src: url("./assets/fonts/清松手寫體1.ttf");
+  src: url("assets/fonts/清松手寫體1.ttf");
 }
 @font-face {
   font-family: "henyi";
-  src: url("./assets/fonts/SentyMARUKO.ttf");
+  src: url("assets/fonts/SentyMARUKO.ttf");
 }
 @keyframes animateShadow {
   0% {
