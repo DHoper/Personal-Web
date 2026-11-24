@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { profile } from '../data/profile'
+import { content } from '../data/profile'
+import { t } from '../i18n'
 
 const year = new Date().getFullYear()
 </script>
@@ -12,16 +13,16 @@ const year = new Date().getFullYear()
         <span v-reveal:wipe class="headline__line">Let's build</span>
         <span v-reveal:wipe="200" class="headline__line">something <span class="outline">reliable.</span></span>
       </h2>
-      <p v-reveal="300" class="lead">正在尋找全端／後端工程師的職缺，台中、北部皆可，對遠端工作有意願。歡迎來信洽談。</p>
+      <p v-reveal="300" class="lead">{{ t.contactLead }}</p>
 
       <div v-reveal="400" class="card">
         <span class="stamp" aria-hidden="true">{{ year }}</span>
-        <a class="mail" :href="`mailto:${profile.email}`">
+        <a class="mail" :href="`mailto:${content.profile.email}`">
           <span class="eyebrow">Email</span>
-          <span class="mail__addr">{{ profile.email }}</span>
+          <span class="mail__addr">{{ content.profile.email }}</span>
           <span class="mail__arrow" aria-hidden="true">→</span>
         </a>
-        <a class="mail" :href="profile.github" target="_blank" rel="noopener">
+        <a class="mail" :href="content.profile.github" target="_blank" rel="noopener">
           <span class="eyebrow">GitHub</span>
           <span class="mail__addr">github.com/DHoper</span>
           <span class="mail__arrow" aria-hidden="true">↗</span>
@@ -30,7 +31,7 @@ const year = new Date().getFullYear()
     </div>
 
     <footer class="footer wrap">
-      <span>© {{ year }} {{ profile.nameZh }} Tingyi Lin</span>
+      <span>© {{ year }} {{ content.profile.nameZh }} Tingyi Lin</span>
       <span class="footer__code">console.log("THANKS!!");</span>
     </footer>
   </section>

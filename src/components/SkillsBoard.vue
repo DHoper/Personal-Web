@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import SectionTitle from './SectionTitle.vue'
-import { skillGroups } from '../data/profile'
+import { content } from '../data/profile'
+import { t } from '../i18n'
 </script>
 
 <template>
   <section id="skills" class="skills" aria-labelledby="skills-title">
     <div class="wrap">
-      <SectionTitle id="skills-title" index="05" en="Tech Stack" zh="技術能力" />
+      <SectionTitle id="skills-title" index="05" en="Tech Stack" :zh="t.sections.skills" />
       <div v-reveal class="board">
-        <div v-for="g in skillGroups" :key="g.title" class="group">
+        <div v-for="g in content.skillGroups" :key="g.title" class="group">
           <h3 class="eyebrow group__title">{{ g.title }}</h3>
           <ul class="items">
             <li v-for="s in g.items" :key="s.name" :class="{ core: s.level === 3 }">{{ s.name }}</li>

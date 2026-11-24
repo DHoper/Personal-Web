@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Project } from '../data/profile'
+import { t } from '../i18n'
 
 // 舊版雙層卡片的進化：後方保留一張彩色疊層，正面直接攤開「視覺 + 說明」，不必翻面才看得到內容。
 // live：這張卡在畫面上時才播放視覺動畫
@@ -13,7 +14,7 @@ defineProps<{ project: Project; live?: boolean }>()
         v-if="project.visual.type === 'image'"
         class="shot"
         :src="project.visual.src"
-        :alt="`${project.title} 畫面截圖`"
+        :alt="`${project.title} ${t.work.shot}`"
         loading="lazy"
       />
 
@@ -75,7 +76,7 @@ defineProps<{ project: Project; live?: boolean }>()
       <ul class="highlights">
         <li v-for="h in project.highlights" :key="h">{{ h }}</li>
       </ul>
-      <ul class="tags" aria-label="使用技術">
+      <ul class="tags" :aria-label="t.work.tech">
         <li v-for="t in project.tags" :key="t">{{ t }}</li>
       </ul>
       <p v-if="project.note" class="note">{{ project.note }}</p>

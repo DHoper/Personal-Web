@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { experiences, projects } from '../data/profile'
+import { content } from '../data/profile'
 
 // 進站時的「建置」畫面：逐行印出，跑完往上收起。
 // 同一個分頁只播一次；偏好減少動態效果的使用者直接略過；點擊或按任意鍵可跳過。
@@ -58,8 +58,8 @@ onMounted(() => {
   const script = [
     '$ npm run portfolio',
     '> tingyi-lin@2.0.0 build',
-    `✓ loaded career log (${experiences.length} commits)`,
-    `✓ compiled ${projects.length} selected works`,
+    `✓ loaded career log (${content.value.experiences.length} commits)`,
+    `✓ compiled ${content.value.projects.length} selected works`,
     '__ready__',
   ]
   script.forEach((line, i) => {

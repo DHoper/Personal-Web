@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { moreInfo } from '../data/profile'
+import { content } from '../data/profile'
+import { t } from '../i18n'
 import plusIcon from '../assets/svg/plus.svg'
 
 // 舊版的折疊清單：點擊展開，+ 號轉成 ×，展開區為黃底
-const open = reactive<Record<string, boolean>>({ [moreInfo[0]!.id]: true })
+const open = reactive<Record<string, boolean>>({ job: true })
 </script>
 
 <template>
-  <section class="more" aria-label="更多資訊">
+  <section class="more" :aria-label="t.infoAria">
     <div class="wrap">
       <div v-reveal class="list">
-        <div v-for="(block, i) in moreInfo" :key="block.id" class="block" :class="{ 'is-open': open[block.id] }">
+        <div v-for="(block, i) in content.moreInfo" :key="block.id" class="block" :class="{ 'is-open': open[block.id] }">
           <h3>
             <button
               type="button"

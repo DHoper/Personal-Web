@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import SectionTitle from './SectionTitle.vue'
-import { experiences } from '../data/profile'
+import { content } from '../data/profile'
+import { t } from '../i18n'
 
 // 捲動時，git graph 的線逐段被描成朱紅色，經過的節點會亮起
 const log = ref<HTMLElement | null>(null)
@@ -36,7 +37,7 @@ onBeforeUnmount(() => {
 <template>
   <section id="career" class="career">
     <div class="wrap">
-      <SectionTitle index="03" en="Career" zh="工作經歷" />
+      <SectionTitle index="03" en="Career" :zh="t.sections.career" />
 
       <div class="window" v-reveal>
         <div class="window__bar" aria-hidden="true">
@@ -45,7 +46,7 @@ onBeforeUnmount(() => {
         </div>
 
         <ol ref="log" class="log">
-          <li v-for="job in experiences" :key="job.hash" class="commit" :class="{ 'commit--head': job.current }">
+          <li v-for="job in content.experiences" :key="job.hash" class="commit" :class="{ 'commit--head': job.current }">
             <span class="node" aria-hidden="true"></span>
             <div class="commit__side">
               <p class="period">{{ job.period }}</p>

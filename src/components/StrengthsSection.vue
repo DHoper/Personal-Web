@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import SectionTitle from './SectionTitle.vue'
-import { strengths } from '../data/profile'
+import { content } from '../data/profile'
+import { t } from '../i18n'
 
 // 聚光燈：游標所在位置亮起一圈朱紅光暈，跨卡片連續移動
 function onMove(e: PointerEvent) {
@@ -16,9 +17,9 @@ function onMove(e: PointerEvent) {
 <template>
   <section class="strengths" aria-labelledby="strengths-title">
     <div class="wrap">
-      <SectionTitle id="strengths-title" index="02" en="What I do" zh="專長領域" tone="dark" />
+      <SectionTitle id="strengths-title" index="02" en="What I do" :zh="t.sections.strengths" tone="dark" />
       <ol class="grid" v-reveal @pointermove="onMove">
-        <li v-for="(s, i) in strengths" :key="s.en" class="card">
+        <li v-for="(s, i) in content.strengths" :key="s.en" class="card">
           <div class="card__head">
             <span class="card__no">0{{ i + 1 }}</span>
             <span class="eyebrow card__en">{{ s.en }}</span>

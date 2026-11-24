@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { profile } from '../data/profile'
+import { content } from '../data/profile'
+import { locale, setLocale, t } from '../i18n'
 
 const links = [
   { href: '#about', label: 'About' },
@@ -30,14 +31,23 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
 
 <template>
   <header class="nav" :class="{ 'nav--hidden': hidden, 'nav--solid': solid }">
-    <nav class="nav__inner" aria-label="主要導覽">
-      <a href="#top" class="logo" aria-label="回到頂端">TL<span>/</span></a>
+    <nav class="nav__inner" :aria-label="t.nav.aria">
+      <a href="#top" class="logo" :aria-label="t.nav.top">TL<span>/</span></a>
       <ul class="links">
         <li v-for="(link, i) in links" :key="link.href">
           <a :href="link.href"><sup>0{{ i + 1 }}</sup>{{ link.label }}</a>
         </li>
       </ul>
-      <a :href="profile.github" target="_blank" rel="noopener" class="gh" aria-label="GitHub">
+      <button
+        type="button"
+        class="lang"
+        :aria-label="t.nav.switchAria"
+        :lang="locale === 'zh' ? 'en' : 'zh-Hant'"
+        @click="setLocale(locale === 'zh' ? 'en' : 'zh')"
+      >
+        {{ t.nav.switchTo }}
+      </button>
+      <a :href="content.profile.github" target="_blank" rel="noopener" class="gh" aria-label="GitHub">
         <svg viewBox="0 0 16 16" aria-hidden="true">
           <path
             fill="currentColor"
@@ -121,6 +131,27 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   transform: scaleX(1);
   transform-origin: left;
 }
+.lang {
+  padding: 0.25rem 0.7rem;
+  border: var(--bw) solid currentColor;
+  border-radius: 999px;
+  background: none;
+  color: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.lang:hover,
+.lang:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ink);
+  outline: none;
+}
 .gh {
   display: inline-flex;
 }
@@ -139,7 +170,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   .links {
     margin-left: 0;
   }
-  .gh {
+  .lang {
     margin-left: auto;
   }
 }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { profile } from '../data/profile'
+import { content } from '../data/profile'
+import { t } from '../i18n'
 import scrollText from '../assets/svg/scroll-text.svg'
 import scrollArrow from '../assets/svg/scroll-arrow.svg'
 
@@ -55,7 +56,7 @@ const badgeVars = {
     <div class="wrap banner__inner">
       <p class="meta eyebrow">
         <span>// Portfolio</span>
-        <span>{{ profile.location }}</span>
+        <span>{{ content.profile.location }}</span>
         <span class="open"><i aria-hidden="true"></i>Open to work</span>
       </p>
 
@@ -69,21 +70,21 @@ const badgeVars = {
 
       <div class="intro">
         <h2 class="name">
-          I'm {{ profile.firstName }} {{ profile.lastName }}<span class="name__zh">{{ profile.nameZh }}</span>
+          I'm {{ content.profile.firstName }} {{ content.profile.lastName }}<span class="name__zh">{{ content.profile.nameZh }}</span>
         </h2>
-        <p class="role">{{ profile.roleEn }}</p>
-        <p class="pitch">{{ profile.pitch }}</p>
-        <ul class="focus" aria-label="專長重點">
-          <li v-for="f in profile.focus" :key="f">{{ f }}</li>
+        <p class="role">{{ content.profile.roleEn }}</p>
+        <p class="pitch">{{ content.profile.pitch }}</p>
+        <ul class="focus" :aria-label="t.banner.focusAria">
+          <li v-for="f in content.profile.focus" :key="f">{{ f }}</li>
         </ul>
         <div class="cta">
-          <a class="btn btn--accent" href="#work">查看作品 <span class="arrow">→</span></a>
-          <a class="btn btn--ghost" href="#contact">聯絡我</a>
+          <a class="btn btn--accent" href="#work">{{ t.banner.viewWork }} <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="#contact">{{ t.banner.contact }}</a>
         </div>
       </div>
     </div>
 
-    <a class="badge" href="#about" aria-label="往下捲動" :style="badgeVars">
+    <a class="badge" href="#about" :aria-label="t.banner.scrollAria" :style="badgeVars">
       <span class="badge__text"></span>
       <span class="badge__arrow"></span>
     </a>

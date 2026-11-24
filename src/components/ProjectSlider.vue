@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import SectionTitle from './SectionTitle.vue'
 import ProjectCase from './ProjectCase.vue'
-import { profile, projects } from '../data/profile'
+import { content } from '../data/profile'
+import { t } from '../i18n'
 
 // 左右切換作品：頭尾循環、手機滑動、鍵盤左右鍵
 const index = ref(0)
-const count = projects.length
+const count = computed(() => content.value.projects.length)
 const inView = ref(false)
 const section = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
 function go(i: number) {
-  index.value = (i + count) % count
+  index.value = (i + count.value) % count.value
 }
 
 let startX: number | null = null
@@ -53,17 +54,17 @@ const pad = (n: number) => String(n).padStart(2, '0')
     ref="section"
     class="work"
     aria-roledescription="carousel"
-    aria-label="作品精選"
+    :aria-label="t.work.aria"
     @keydown.left="go(index - 1)"
     @keydown.right="go(index + 1)"
   >
     <div class="wrap">
-      <SectionTitle index="04" en="Key Projects" zh="代表專案" />
+      <SectionTitle index="04" en="Key Projects" :zh="t.sections.work" />
 
       <div v-reveal class="controls">
-        <div class="tabs" role="tablist" aria-label="選擇作品">
+        <div class="tabs" role="tablist" :aria-label="t.work.tabs">
           <button
-            v-for="(p, i) in projects"
+            v-for="(p, i) in content.projects"
             :key="p.title"
             type="button"
             role="tab"
@@ -77,15 +78,15 @@ const pad = (n: number) => String(n).padStart(2, '0')
         </div>
         <div class="nav">
           <span class="counter">{{ pad(index + 1) }} <i>/ {{ pad(count) }}</i></span>
-          <button type="button" class="arrow" aria-label="上一個作品" @click="go(index - 1)">←</button>
-          <button type="button" class="arrow" aria-label="下一個作品" @click="go(index + 1)">→</button>
+          <button type="button" class="arrow" :aria-label="t.work.prev" @click="go(index - 1)">←</button>
+          <button type="button" class="arrow" :aria-label="t.work.next" @click="go(index + 1)">→</button>
         </div>
       </div>
 
       <div v-reveal class="viewport" @pointerdown="onPointerDown" @pointerup="onPointerUp" @pointercancel="startX = null">
         <div class="track" :style="{ transform: `translateX(-${index * 100}%)` }">
           <div
-            v-for="(p, i) in projects"
+            v-for="(p, i) in content.projects"
             :key="p.title"
             class="slide"
             role="group"
@@ -99,8 +100,8 @@ const pad = (n: number) => String(n).padStart(2, '0')
       </div>
 
       <p v-reveal class="more">
-        個人作品與原始碼放在 GitHub：
-        <a :href="profile.github" target="_blank" rel="noopener">github.com/DHoper ↗</a>
+        {{ t.work.more }}
+        <a :href="content.profile.github" target="_blank" rel="noopener">github.com/DHoper ↗</a>
       </p>
     </div>
   </section>
