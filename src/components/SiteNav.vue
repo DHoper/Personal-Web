@@ -45,7 +45,8 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
         :lang="locale === 'zh' ? 'en' : 'zh-Hant'"
         @click="setLocale(locale === 'zh' ? 'en' : 'zh')"
       >
-        {{ t.nav.switchTo }}
+        <span class="lang__full">{{ t.nav.switchTo }}</span>
+        <span class="lang__short" aria-hidden="true">{{ locale === 'zh' ? 'EN' : '中' }}</span>
       </button>
       <a :href="content.profile.github" target="_blank" rel="noopener" class="gh" aria-label="GitHub">
         <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -160,7 +161,16 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   height: 1.5rem;
 }
 
+.lang__short {
+  display: none;
+  font-family: 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+}
+
 @media (max-width: 560px) {
+  .nav__inner {
+    gap: 0.75rem;
+    padding-inline: 0.75rem;
+  }
   .links sup {
     display: none;
   }
@@ -169,9 +179,32 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   }
   .links {
     margin-left: 0;
+    gap: clamp(0.55rem, 3.2vw, 1rem);
+    min-width: 0;
+  }
+  .links a {
+    font-size: clamp(0.78rem, 3.6vw, 0.95rem);
   }
   .lang {
+    flex: none;
     margin-left: auto;
+    min-width: 2.25rem;
+    padding: 0.2rem 0.55rem;
+  }
+  .lang__full {
+    display: none;
+  }
+  .lang__short {
+    display: inline;
+  }
+  .gh {
+    flex: none;
+  }
+}
+/* 很窄的手機：GitHub 圖示讓位（聯絡區已有 GitHub 連結） */
+@media (max-width: 400px) {
+  .gh {
+    display: none;
   }
 }
 </style>

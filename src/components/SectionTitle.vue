@@ -8,7 +8,7 @@ withDefaults(defineProps<{ index: string; en: string; zh: string; tone?: 'light'
   <header class="title" :class="`title--${tone}`">
     <p class="eyebrow title__index">// {{ index }}</p>
     <h2 v-reveal:wipe class="title__en">{{ en }}</h2>
-    <p v-reveal="350" class="title__zh">{{ zh }}</p>
+    <p v-if="zh.toLowerCase() !== en.toLowerCase()" v-reveal="350" class="title__zh">{{ zh }}</p>
   </header>
 </template>
 
@@ -43,5 +43,13 @@ withDefaults(defineProps<{ index: string; en: string; zh: string; tone?: 'light'
 }
 .title--dark .title__zh {
   color: var(--muted-dark);
+}
+@media (max-width: 480px) {
+  .title {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .title__en {
+    overflow-wrap: anywhere;
+  }
 }
 </style>

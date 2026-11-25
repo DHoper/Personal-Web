@@ -19,7 +19,7 @@ import ContactSection from './components/ContactSection.vue'
   <SiteNav />
   <main>
     <BannerSection />
-    <MarqueeBand tone="accent" :items="['Full-stack', 'Back-end', 'System Integration', 'DevOps × AI']" />
+    <MarqueeBand tone="accent" :items="['Requirements', 'System Design', 'Development', 'Delivery']" />
     <AboutSection />
     <StrengthsSection />
     <ExperienceLog />

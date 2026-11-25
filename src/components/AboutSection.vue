@@ -276,6 +276,23 @@ const real = ref(false)
     grid-template-columns: 1fr;
   }
 }
+/* 窄手機：頭像卡縮小，讓切換鈕和對話框留在同一排 */
+@media (max-width: 400px) {
+  .me {
+    gap: 0.9rem;
+  }
+  .card {
+    width: 7.25rem;
+  }
+  .bubble {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  .switch button {
+    padding: 0.3rem 0.65rem;
+    font-size: 0.8rem;
+  }
+}
 @media (max-width: 480px) {
   .facts {
     grid-template-columns: 1fr;

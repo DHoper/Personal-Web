@@ -291,7 +291,7 @@ const zh = {
     {
       id: 'basic',
       title: '基本資料',
-      items: ['姓名：林廷一', '現居：台中市', '學歷：國立台中空中大學 資訊學系', '英文：TOEIC 多益 780', '進修中：準備 AWS 雲端認證'],
+      items: ['姓名：林廷一', '現居：台中市', '學歷：國立台中空中大學 資訊學系', '英文：TOEIC 多益 780'],
     },
   ],
 }
@@ -470,7 +470,7 @@ const en: typeof zh = {
     {
       id: 'basic',
       title: 'About',
-      items: ['Name: Tingyi Lin', 'Based in: Taichung, Taiwan', 'Education: National Open University, Information Science', 'English: TOEIC 780', 'In progress: preparing for an AWS certification'],
+      items: ['Name: Tingyi Lin', 'Based in: Taichung, Taiwan', 'Education: National Open University, Information Science', 'English: TOEIC 780'],
     },
   ],
 }
