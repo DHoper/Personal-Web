@@ -31,7 +31,8 @@ function loop() {
   if (ring.value) ring.value.style.transform = `translate3d(${rx}px, ${ry}px, 0)`
   if (pointer.value) {
     const [hx, hy] = HOT[hovering.value ? 'hand' : 'arrow']
-    const k = compact.value ? 0.7 : 1
+    // 素材原尺寸太大，縮到約 6 成；作品庫裡再小一點
+    const k = compact.value ? 0.45 : 0.6
     pointer.value.style.transform = `translate3d(${x - hx * k}px, ${y - hy * k}px, 0) scale(${k})`
   }
   raf = requestAnimationFrame(loop)
