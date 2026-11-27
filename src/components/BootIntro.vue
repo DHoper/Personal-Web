@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { content } from '../data/profile'
+import { works } from '../data/works'
 
 // 進站時的「建置」畫面：逐行印出，跑完往上收起。
 // 同一個分頁只播一次；偏好減少動態效果的使用者直接略過；點擊或按任意鍵可跳過。
@@ -60,6 +61,7 @@ onMounted(() => {
     '> tingyi-lin@2.0.0 build',
     `✓ loaded career log (${content.value.experiences.length} commits)`,
     `✓ compiled ${content.value.projects.length} selected works`,
+    `✓ mounted ~/library (${works.value.length} items)`,
     '__ready__',
   ]
   script.forEach((line, i) => {

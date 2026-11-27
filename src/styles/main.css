@@ -42,11 +42,40 @@
   --font-body: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
 
   --frame: 6px;
-  --nav-h: 4.25rem;
+  --nav-h: 1rem;
+  --taskbar-h: calc(3.1rem + env(safe-area-inset-bottom, 0px));
   --gutter: max(16px, 5vw);
   --max: 78rem;
 
+  /* 依時段變色的桌布（clock.ts 在 <html> 設定 data-phase），預設中午 */
+  --sky: #6699bb;
+  --sky-2: #88bbdd;
+  --hill: #99bb77;
+  --hill-2: #447755;
+  --orb: #fff3b8;
+
   color-scheme: light;
+}
+html[data-phase='morning'] {
+  --sky: #aaccee;
+  --sky-2: #ddeaf5;
+  --hill: #99bb77;
+  --hill-2: #447755;
+  --orb: #ffeeaa;
+}
+html[data-phase='evening'] {
+  --sky: #ee99aa;
+  --sky-2: #ffddcc;
+  --hill: #885555;
+  --hill-2: #444477;
+  --orb: #ff5a36;
+}
+html[data-phase='night'] {
+  --sky: #222244;
+  --sky-2: #444477;
+  --hill: #3a3a66;
+  --hill-2: #1c1c3a;
+  --orb: #ccddee;
 }
 
 *,
@@ -64,6 +93,7 @@ html {
 
 body {
   margin: 0;
+  padding-bottom: calc(var(--taskbar-h) + var(--frame));
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -219,7 +249,8 @@ html.has-custom-cursor * {
 }
 
 /* ---- 開場終端機播放期間 ------------------------------------------------ */
-html.booting {
+html.booting,
+html.modal-open {
   overflow: hidden;
 }
 /* 開場跑完前，首屏動畫先暫停在第一格 */
@@ -243,7 +274,7 @@ html:not(.booted) .banner * {
 @media (max-width: 720px) {
   :root {
     --frame: 4px;
-    --nav-h: 3.75rem;
+    --taskbar-h: calc(2.9rem + env(safe-area-inset-bottom, 0px));
   }
 }
 

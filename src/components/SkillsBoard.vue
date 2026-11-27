@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SectionTitle from './SectionTitle.vue'
+import WinFrame from './WinFrame.vue'
 import { content } from '../data/profile'
 import { t } from '../i18n'
 </script>
@@ -7,15 +8,17 @@ import { t } from '../i18n'
 <template>
   <section id="skills" class="skills" aria-labelledby="skills-title">
     <div class="wrap">
-      <SectionTitle id="skills-title" index="05" en="Tech Stack" :zh="t.sections.skills" />
-      <div v-reveal class="board">
-        <div v-for="g in content.skillGroups" :key="g.title" class="group">
-          <h3 class="eyebrow group__title">{{ g.title }}</h3>
-          <ul class="items">
-            <li v-for="s in g.items" :key="s.name" :class="{ core: s.level === 3 }">{{ s.name }}</li>
-          </ul>
+      <SectionTitle id="skills-title" index="06" en="Tech Stack" :zh="t.sections.skills" />
+      <WinFrame v-reveal title="~/skills.cfg" icon="stack" tone="#7fdcf5" active>
+        <div class="board">
+          <div v-for="g in content.skillGroups" :key="g.title" class="group">
+            <h3 class="eyebrow group__title">{{ g.title }}</h3>
+            <ul class="items">
+              <li v-for="s in g.items" :key="s.name" :class="{ core: s.level === 3 }">{{ s.name }}</li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </WinFrame>
     </div>
   </section>
 </template>
@@ -27,11 +30,7 @@ import { t } from '../i18n'
 .board {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
-  border: var(--border);
-  border-radius: var(--radius);
   background: var(--white);
-  box-shadow: var(--shadow);
-  overflow: hidden;
 }
 .group {
   padding: 1.5rem;

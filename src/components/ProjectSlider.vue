@@ -94,7 +94,7 @@ const pad = (n: number) => String(n).padStart(2, '0')
             :aria-label="`${i + 1} / ${count}：${p.title}`"
             :inert="i !== index"
           >
-            <ProjectCase :project="p" :live="inView && i === index" />
+            <ProjectCase :project="p" :index="i" :live="inView && i === index" />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import SectionTitle from './SectionTitle.vue'
+import WinFrame from './WinFrame.vue'
 import { content } from '../data/profile'
 import { t } from '../i18n'
 
@@ -39,11 +40,7 @@ onBeforeUnmount(() => {
     <div class="wrap">
       <SectionTitle index="03" en="Career" :zh="t.sections.career" />
 
-      <div class="window" v-reveal>
-        <div class="window__bar" aria-hidden="true">
-          <span class="lights"><i></i><i></i><i></i></span>
-          <span class="window__cmd">~/career — git log --graph</span>
-        </div>
+      <WinFrame v-reveal title="~/career" sub="git log --graph" icon="branch" tone="var(--accent)" active>
 
         <ol ref="log" class="log">
           <li v-for="job in content.experiences" :key="job.hash" class="commit" :class="{ 'commit--head': job.current }">
@@ -63,7 +60,7 @@ onBeforeUnmount(() => {
             </div>
           </li>
         </ol>
-      </div>
+      </WinFrame>
     </div>
   </section>
 </template>
@@ -72,43 +69,6 @@ onBeforeUnmount(() => {
 .career {
   padding-block: clamp(4.5rem, 10vw, 8rem);
 }
-.window {
-  border: var(--border);
-  border-radius: var(--radius);
-  background: var(--white);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-}
-.window__bar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.7rem 1.1rem;
-  background: var(--paper-2);
-  border-bottom: var(--border);
-}
-.lights {
-  display: flex;
-  gap: 0.4rem;
-}
-.lights i {
-  width: 0.75rem;
-  height: 0.75rem;
-  border: 1.5px solid var(--ink);
-  border-radius: 50%;
-}
-.lights i:first-child {
-  background: var(--accent);
-}
-.window__cmd {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .log {
   position: relative;
   padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 3rem);

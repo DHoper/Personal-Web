@@ -8,7 +8,7 @@ const year = new Date().getFullYear()
 <template>
   <section id="contact" class="contact">
     <div class="wrap">
-      <p class="eyebrow index">// 06 — Contact</p>
+      <p class="eyebrow index">// 07 — Contact</p>
       <h2 class="headline">
         <span v-reveal:wipe class="headline__line">Let's build</span>
         <span v-reveal:wipe="200" class="headline__line">something <span class="outline">reliable.</span></span>

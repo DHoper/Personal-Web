@@ -1,14 +1,24 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import PixelIcon from './PixelIcon.vue'
 import type { Project } from '../data/profile'
 import { t } from '../i18n'
 
 // 舊版雙層卡片的進化：後方保留一張彩色疊層，正面直接攤開「視覺 + 說明」，不必翻面才看得到內容。
 // live：這張卡在畫面上時才播放視覺動畫
-defineProps<{ project: Project; live?: boolean }>()
+const props = defineProps<{ project: Project; live?: boolean; index?: number }>()
+// 標題列上的「檔名」：case-01.log 之類
+const file = computed(() => `case-${String((props.index ?? 0) + 1).padStart(2, '0')}.${props.project.visual.type === 'terminal' ? 'log' : 'app'}`)
 </script>
 
 <template>
   <article class="case" :class="{ 'is-live': live }" :style="{ '--tone': project.color }">
+    <div class="bar" aria-hidden="true">
+      <PixelIcon name="star" :size="16" />
+      <span class="bar__title">{{ file }}</span>
+      <span class="bar__stripes"></span>
+      <span class="bar__controls"><i></i><i></i></span>
+    </div>
     <div class="visual">
       <img
         v-if="project.visual.type === 'image'"
@@ -121,6 +131,41 @@ defineProps<{ project: Project; live?: boolean }>()
   transform: translate(18px, 18px);
 }
 
+/* ---- 標題列（像素桌面風格的視窗） ---- */
+.bar {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.35rem;
+  padding: 0.35rem 0.55rem 0.35rem 0.75rem;
+  border-bottom: var(--border);
+  border-radius: calc(var(--radius) - var(--bw)) calc(var(--radius) - var(--bw)) 0 0;
+  background: var(--tone);
+}
+.bar__title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.bar__stripes {
+  flex: 1;
+  height: 0.75rem;
+  background: repeating-linear-gradient(to bottom, var(--ink) 0 2px, transparent 2px 4px);
+  opacity: 0.85;
+}
+.bar__controls {
+  display: flex;
+  gap: 0.35rem;
+}
+.bar__controls i {
+  width: 0.95rem;
+  height: 0.95rem;
+  border: var(--bw) solid var(--ink);
+  border-radius: 2px;
+  background: var(--white);
+}
+
 /* ---- 左：視覺 ---- */
 .visual {
   display: grid;
@@ -128,7 +173,7 @@ defineProps<{ project: Project; live?: boolean }>()
   min-height: 22rem;
   padding: clamp(1.25rem, 3vw, 2.5rem);
   border-right: var(--border);
-  border-radius: var(--radius) 0 0 var(--radius);
+  border-radius: 0 0 0 calc(var(--radius) - var(--bw));
   background:
     radial-gradient(circle, rgb(17 17 17 / 0.14) 1px, transparent 1.2px) 0 0 / 16px 16px,
     var(--paper);
@@ -397,7 +442,7 @@ defineProps<{ project: Project; live?: boolean }>()
     min-height: 16rem;
     border-right: none;
     border-bottom: var(--border);
-    border-radius: var(--radius) var(--radius) 0 0;
+    border-radius: 0;
   }
 }
 </style>
