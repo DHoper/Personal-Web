@@ -247,7 +247,7 @@ const WORKS: WorkDef[] = [
       title: '網頁寵物',
       tagline: '一隻小動物在你瀏覽的網頁底部散步',
       summary:
-        '小橘貓、柴柴、馬來貘、卡皮巴拉四選一，每隻個性不同。點牠會跳起來冒出愛心，按住可以拖到別處，全螢幕看影片時會自己躲起來。（這個網站工作列上的小貓就是牠。）',
+        '小橘貓、柴柴、馬來貘、卡皮巴拉四選一，每隻個性不同。點牠會跳起來冒出愛心，按住可以拖到別處，全螢幕看影片時會自己躲起來。（這個網站畫面下緣散步的馬來貘就是牠。）',
       highlights: ['像素逐格動畫', '點擊互動與親密度', '拖曳、全螢幕時自動隱藏', '可調大小、指定網站不顯示'],
       note: EXT_NOTE.zh,
     },
@@ -255,7 +255,7 @@ const WORKS: WorkDef[] = [
       title: 'WebPet',
       tagline: 'A little pet strolling along the bottom of every page',
       summary:
-        'Pick a ginger cat, a Shiba, a Malayan tapir or a capybara — each with its own personality. Click it and it hops with a heart, drag it somewhere else, and it hides by itself when you watch videos full screen. (The cat on this site’s taskbar is one of them.)',
+        'Pick a ginger cat, a Shiba, a Malayan tapir or a capybara — each with its own personality. Click it and it hops with a heart, drag it somewhere else, and it hides by itself when you watch videos full screen. (The tapir strolling along the bottom of this site is one of them.)',
       highlights: ['Frame-by-frame pixel animation', 'Click interactions and affection', 'Drag, auto-hide in full screen', 'Adjustable size, per-site hiding'],
       note: EXT_NOTE.en,
     },

@@ -87,7 +87,6 @@ const ui = {
       install: '安裝方式',
       cats: '分類',
     },
-    taskbar: { aria: '工作列', start: '開始', menu: '網站選單', clock: '現在時間', email: '寫信給我' },
     infoAria: '更多資訊',
     contactLead: '如果你的團隊需要一位能把需求理清楚、把系統設計好，並推動到如期交付的夥伴，歡迎來信聊聊。台中、北部或遠端都可以。',
   },
@@ -150,7 +149,6 @@ const ui = {
       install: 'How to install',
       cats: 'Categories',
     },
-    taskbar: { aria: 'Taskbar', start: 'Start', menu: 'Site menu', clock: 'Current time', email: 'Email me' },
     infoAria: 'More information',
     contactLead:
       'If your team needs someone who can get the requirements right, design the system well and see it through to delivery, I would love to hear from you. Based in Taichung; open to northern Taiwan or remote work.',

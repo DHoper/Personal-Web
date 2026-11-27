@@ -42,8 +42,9 @@
   --font-body: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
 
   --frame: 6px;
-  --nav-h: 1rem;
-  --taskbar-h: calc(3.1rem + env(safe-area-inset-bottom, 0px));
+  --nav-h: 4.25rem;
+  /* 作品詳細視窗底部要讓出的空間（目前沒有底部工作列） */
+  --taskbar-h: 0px;
   --gutter: max(16px, 5vw);
   --max: 78rem;
 
@@ -93,7 +94,6 @@ html {
 
 body {
   margin: 0;
-  padding-bottom: calc(var(--taskbar-h) + var(--frame));
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
@@ -274,7 +274,7 @@ html:not(.booted) .banner * {
 @media (max-width: 720px) {
   :root {
     --frame: 4px;
-    --taskbar-h: calc(2.9rem + env(safe-area-inset-bottom, 0px));
+    --nav-h: 3.75rem;
   }
 }
 

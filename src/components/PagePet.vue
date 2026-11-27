@@ -1,51 +1,48 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { locale } from '../i18n'
-import walkSheet from '../assets/img/cat-walk.png'
-import idleSheet from '../assets/img/cat-idle.png'
+import walkSheet from '../assets/img/tapir-walk.png'
+import idleSheet from '../assets/img/tapir-idle.png'
 
-// 工作列上散步的小橘貓（來自「網頁寵物」作品的素材）。
-// 走一走、停下來發呆；點牠會跳一下冒出一句話。偏好減少動態效果時只靜靜坐著。
+// 在畫面最下緣散步的馬來貘（來自「網頁寵物」作品的素材）。
+// 走一走、停下來發呆；點牠會跳一下冒出一句話。偏好減少動態效果時只靜靜站著。
 const FRAME_W = 92
-const FRAME_H = 47
-const SCALE = 0.62
-const SPEED = 26 // px / 秒
+const FRAME_H = 56
+const SCALE = 0.7
+const SPEED = 22 // px / 秒
 
-const el = ref<HTMLElement | null>(null)
 const x = ref(0)
 const dir = ref<1 | -1>(1)
 const mode = ref<'walk' | 'idle'>('idle')
 const hop = ref(false)
 const say = ref('')
 
-const LINES = { zh: ['喵～', '呼嚕呼嚕', '摸摸頭！', '要罐罐'], en: ['Meow~', 'Purr…', 'Pet me!', 'Snack time?'] }
+const LINES = { zh: ['噗嚕～', '慢慢走', '黑白分明', '想吃葉子'], en: ['Snort~', 'Slow and steady', 'Black and white', 'Leaves, please?'] }
 
 let raf = 0
 let last = 0
 let until = 0
 let sayTimer = 0
 
-function bounds() {
-  const parent = el.value?.parentElement
-  return Math.max(0, (parent?.clientWidth ?? 300) - FRAME_W * SCALE)
+function maxX() {
+  return Math.max(0, window.innerWidth - FRAME_W * SCALE - 24)
 }
 
 function step(ts: number) {
   const dt = last ? Math.min(0.05, (ts - last) / 1000) : 0
   last = ts
   if (ts > until) {
-    // 換個狀態：大部分時間在走，偶爾停下來
-    if (mode.value === 'walk' && Math.random() < 0.45) {
+    if (mode.value === 'walk' && Math.random() < 0.5) {
       mode.value = 'idle'
-      until = ts + 2500 + Math.random() * 4000
+      until = ts + 3000 + Math.random() * 5000
     } else {
       mode.value = 'walk'
       if (Math.random() < 0.35) dir.value = dir.value === 1 ? -1 : 1
-      until = ts + 3000 + Math.random() * 6000
+      until = ts + 4000 + Math.random() * 7000
     }
   }
   if (mode.value === 'walk') {
-    const max = bounds()
+    const max = maxX()
     x.value += dir.value * SPEED * dt
     if (x.value <= 0) {
       x.value = 0
@@ -68,7 +65,7 @@ function poke() {
 }
 
 onMounted(() => {
-  x.value = bounds() * 0.35
+  x.value = maxX() * 0.7
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
   raf = requestAnimationFrame(step)
 })
@@ -80,7 +77,6 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    ref="el"
     class="pet"
     :style="{
       transform: `translateX(${x.toFixed(1)}px)`,
@@ -95,7 +91,7 @@ onBeforeUnmount(() => {
       type="button"
       class="pet__body"
       :class="[`pet__body--${mode}`, { 'pet__body--hop': hop, 'pet__body--left': dir === -1 }]"
-      aria-label="🐈"
+      :aria-label="locale === 'zh' ? '馬來貘' : 'Malayan tapir'"
       @click="poke"
       @animationend="hop = false"
     ></button>
@@ -104,9 +100,10 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .pet {
-  position: absolute;
-  left: 0;
-  bottom: 100%;
+  position: fixed;
+  left: calc(var(--frame) + 6px);
+  bottom: var(--frame);
+  z-index: 70;
   width: var(--w);
   height: var(--h);
   will-change: transform;
@@ -117,15 +114,15 @@ onBeforeUnmount(() => {
   height: 100%;
   padding: 0;
   border: 0;
-  background: var(--idle) 0 0 / calc(var(--w) * 8) var(--h) no-repeat;
+  background: var(--idle) 0 0 / calc(var(--w) * 7) var(--h) no-repeat;
   image-rendering: pixelated;
   cursor: pointer;
-  animation: idle 1.6s steps(8) infinite;
+  animation: idle 1.8s steps(7) infinite;
 }
 .pet__body--walk {
   background-image: var(--walk);
   background-size: calc(var(--w) * 6) var(--h);
-  animation: walk 0.75s steps(6) infinite;
+  animation: walk 0.9s steps(6) infinite;
 }
 .pet__body--left {
   scale: -1 1;
@@ -133,12 +130,12 @@ onBeforeUnmount(() => {
 .pet__body--hop {
   animation:
     hop 0.45s cubic-bezier(0.3, 1.6, 0.5, 1),
-    idle 1.6s steps(8) infinite;
+    idle 1.8s steps(7) infinite;
 }
 .pet__body--walk.pet__body--hop {
   animation:
     hop 0.45s cubic-bezier(0.3, 1.6, 0.5, 1),
-    walk 0.75s steps(6) infinite;
+    walk 0.9s steps(6) infinite;
 }
 @keyframes walk {
   to {
@@ -147,7 +144,7 @@ onBeforeUnmount(() => {
 }
 @keyframes idle {
   to {
-    background-position-x: calc(var(--w) * -8);
+    background-position-x: calc(var(--w) * -7);
   }
 }
 @keyframes hop {

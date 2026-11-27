@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import BootIntro from './components/BootIntro.vue'
 import CustomCursor from './components/CustomCursor.vue'
-import Taskbar from './components/Taskbar.vue'
+import SiteNav from './components/SiteNav.vue'
+import PagePet from './components/PagePet.vue'
 import BannerSection from './components/BannerSection.vue'
 import MarqueeBand from './components/MarqueeBand.vue'
 import AboutSection from './components/AboutSection.vue'
@@ -17,6 +18,7 @@ import ContactSection from './components/ContactSection.vue'
 <template>
   <BootIntro />
   <CustomCursor />
+  <SiteNav />
   <main>
     <BannerSection />
     <MarqueeBand tone="accent" :items="['Requirements', 'System Design', 'Development', 'Delivery']" />
@@ -30,5 +32,5 @@ import ContactSection from './components/ContactSection.vue'
     <MarqueeBand tone="ink" reverse :items="['Open to work', 'Let\'s talk', 'Taichung / Remote']" />
     <ContactSection />
   </main>
-  <Taskbar />
+  <PagePet />
 </template>

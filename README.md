@@ -41,8 +41,8 @@ src/
 ├─ clock.ts                   時鐘與時段（早上／中午／傍晚／晚上）
 ├─ components/
 │  ├─ CustomCursor.vue        圓點 + 反色圓環游標、視窗外框
-│  ├─ Taskbar.vue             像素桌面風格的工作列（開始選單、區塊按鈕、語言、時鐘）
-│  ├─ TaskPet.vue             工作列上散步的小貓（網頁寵物的素材）
+│  ├─ SiteNav.vue             捲動時自動收起的導覽列
+│  ├─ PagePet.vue             畫面下緣散步的馬來貘（網頁寵物的素材）
 │  ├─ WinFrame.vue            視窗外框：標題列＋網點陰影
 │  ├─ PixelIcon.vue           12×12 像素圖示
 │  ├─ BannerSection.vue       console.log("HELLO!!") 開場
