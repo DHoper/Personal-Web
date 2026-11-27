@@ -146,7 +146,11 @@ ol {
   outline-offset: 4px;
 }
 
-/* 系統的箭頭游標保留，自訂游標只在外面加一圈跟隨的圓框 */
+/* 用舊版網站的大箭頭素材取代系統游標（只在滑鼠裝置上，見 CustomCursor.vue） */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
 
 .wrap {
   width: 100%;

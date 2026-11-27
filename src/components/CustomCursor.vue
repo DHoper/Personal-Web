@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
+import arrowSvg from '../assets/svg/cursor-arrow.svg'
+import handSvg from '../assets/svg/cursor-hand.svg'
 
-// 系統箭頭游標外面加一圈慢半拍跟隨的反色圓環，移到可點擊的東西上時圓環放大。
+// 舊版網站的大箭頭游標（素材圖），移到可點擊的東西上換成手指；外面再加一圈慢半拍跟隨的反色圓環。
 // 只在有滑鼠的裝置啟用。
 const INTERACTIVE = 'a, button, [role="button"], [role="tab"]'
 
@@ -12,6 +14,9 @@ const compact = ref(false)
 const COMPACT = '#lab, .modal'
 const visible = ref(false)
 const ring = ref<HTMLElement | null>(null)
+const pointer = ref<HTMLElement | null>(null)
+// 素材 112×112，箭頭尖端／指尖在圖上的位置（熱點）
+const HOT = { arrow: [52, 52], hand: [56, 51] } as const
 
 let mq: MediaQueryList | null = null
 let raf = 0
@@ -24,6 +29,11 @@ function loop() {
   rx += (x - rx) * 0.2
   ry += (y - ry) * 0.2
   if (ring.value) ring.value.style.transform = `translate3d(${rx}px, ${ry}px, 0)`
+  if (pointer.value) {
+    const [hx, hy] = HOT[hovering.value ? 'hand' : 'arrow']
+    const k = compact.value ? 0.7 : 1
+    pointer.value.style.transform = `translate3d(${x - hx * k}px, ${y - hy * k}px, 0) scale(${k})`
+  }
   raf = requestAnimationFrame(loop)
 }
 
@@ -100,6 +110,7 @@ onBeforeUnmount(() => {
     <div ref="ring" class="cursor ring" :class="{ hover: hovering, compact, hidden: !visible }" aria-hidden="true">
       <span></span>
     </div>
+    <img ref="pointer" class="pointer" :class="{ hidden: !visible }" :src="hovering ? handSvg : arrowSvg" alt="" aria-hidden="true" />
   </template>
 </template>
 
@@ -166,6 +177,18 @@ onBeforeUnmount(() => {
   height: 24px;
   background: none;
   border-width: 2px;
+}
+.pointer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  width: 112px;
+  height: 112px;
+  max-width: none;
+  pointer-events: none;
+  transform-origin: 0 0;
+  will-change: transform;
 }
 .hidden {
   opacity: 0;
