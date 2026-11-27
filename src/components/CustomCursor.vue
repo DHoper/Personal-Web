@@ -15,8 +15,8 @@ const COMPACT = '#lab, .modal'
 const visible = ref(false)
 const ring = ref<HTMLElement | null>(null)
 const pointer = ref<HTMLElement | null>(null)
-// 素材 112×112，箭頭尖端／指尖在圖上的位置（熱點）
-const HOT = { arrow: [52, 52], hand: [56, 51] } as const
+// 素材 36×44（viewBox 單位），箭頭尖端／指尖在圖上的位置（熱點）
+const HOT = { arrow: [5, 4], hand: [15.5, 3] } as const
 
 let mq: MediaQueryList | null = null
 let raf = 0
@@ -31,8 +31,8 @@ function loop() {
   if (ring.value) ring.value.style.transform = `translate3d(${rx}px, ${ry}px, 0)`
   if (pointer.value) {
     const [hx, hy] = HOT[hovering.value ? 'hand' : 'arrow']
-    // 素材原尺寸太大，縮到約 6 成；作品庫裡再小一點
-    const k = compact.value ? 0.45 : 0.6
+    // 顯示成 36×44 的 1 倍；作品庫裡小一點
+    const k = compact.value ? 0.8 : 1
     pointer.value.style.transform = `translate3d(${x - hx * k}px, ${y - hy * k}px, 0) scale(${k})`
   }
   raf = requestAnimationFrame(loop)
@@ -184,8 +184,8 @@ onBeforeUnmount(() => {
   top: 0;
   left: 0;
   z-index: 101;
-  width: 112px;
-  height: 112px;
+  width: 36px;
+  height: 44px;
   max-width: none;
   pointer-events: none;
   transform-origin: 0 0;
