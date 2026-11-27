@@ -106,11 +106,11 @@ const purposeIcon: Record<string, string> = { business: 'business', tool: 'tool'
                 :disabled="count('access', a) === 0 && f.access !== a"
                 @click="f.access = f.access === a ? 'all' : a"
               >
-                <PixelIcon :name="accessIcon[a]" :size="14" />{{ t.lab.access[a] }}<span class="n">{{ count('access', a) }}</span>
+                <PixelIcon :name="accessIcon[a]" :size="12" />{{ t.lab.access[a] }}<span class="n">{{ count('access', a) }}</span>
               </button>
             </div>
             <label class="search">
-              <PixelIcon name="search" :size="16" />
+              <PixelIcon name="search" :size="13" />
               <input v-model="f.q" type="search" :placeholder="t.lab.search" :aria-label="t.lab.search" />
             </label>
             <label class="sort">
@@ -131,12 +131,12 @@ const purposeIcon: Record<string, string> = { business: 'business', tool: 'tool'
               <ul class="folders" :aria-label="t.lab.groups.form">
                 <li>
                   <button type="button" :aria-pressed="!f.form" @click="f.form = null">
-                    <PixelIcon name="folder" :size="18" /><span>{{ t.lab.all }}</span><i>{{ allInForm }}</i>
+                    <PixelIcon name="folder" :size="14" /><span>{{ t.lab.all }}</span><i>{{ allInForm }}</i>
                   </button>
                 </li>
                 <li v-for="fm in FORMS" :key="fm">
                   <button type="button" :aria-pressed="f.form === fm" :disabled="count('form', fm) === 0 && f.form !== fm" @click="pick('form', fm)">
-                    <PixelIcon :name="formIcon[fm]!" :size="18" /><span>{{ t.lab.form[fm] }}</span><i>{{ count('form', fm) }}</i>
+                    <PixelIcon :name="formIcon[fm]!" :size="14" /><span>{{ t.lab.form[fm] }}</span><i>{{ count('form', fm) }}</i>
                   </button>
                 </li>
               </ul>
@@ -164,11 +164,11 @@ const purposeIcon: Record<string, string> = { business: 'business', tool: 'tool'
                   <button type="button" class="card" :style="{ '--tone': w.color }" aria-haspopup="dialog" @click="openIndex = i">
                     <span class="cover">
                       <img v-if="w.image" :src="`./works/${w.image}`" alt="" loading="lazy" />
-                      <span v-else class="cover__icon"><PixelIcon :name="purposeIcon[w.purpose]!" :size="60" /></span>
-                      <span class="cover__form" :title="t.lab.form[w.form]"><PixelIcon :name="formIcon[w.form]!" :size="16" /></span>
+                      <span v-else class="cover__icon"><PixelIcon :name="purposeIcon[w.purpose]!" :size="40" /></span>
+                      <span class="cover__form" :title="t.lab.form[w.form]"><PixelIcon :name="formIcon[w.form]!" :size="12" /></span>
                       <span class="badges">
                         <span v-for="a in w.access.filter((x) => x !== 'source')" :key="a" class="badge" :class="`badge--${a}`">
-                          <PixelIcon :name="accessIcon[a]" :size="12" />{{ t.lab.access[a] }}
+                          <PixelIcon :name="accessIcon[a]" :size="10" />{{ t.lab.access[a] }}
                         </span>
                         <span v-if="w.wip" class="badge badge--wip">{{ t.lab.wip }}</span>
                       </span>
@@ -184,7 +184,7 @@ const purposeIcon: Record<string, string> = { business: 'business', tool: 'tool'
                 </li>
               </ul>
               <div v-else class="empty">
-                <PixelIcon name="folder" :size="48" />
+                <PixelIcon name="folder" :size="36" />
                 <p>{{ t.lab.empty }}</p>
                 <button type="button" class="btn btn--sm" @click="clearAll">{{ t.lab.clear }}</button>
               </div>
@@ -220,8 +220,11 @@ const purposeIcon: Record<string, string> = { business: 'business', tool: 'tool'
 .desk {
   position: relative;
   isolation: isolate;
-  padding: clamp(1rem, 3.5vw, 2.75rem) clamp(0.75rem, 3.5vw, 2.75rem) clamp(3.5rem, 9vw, 7.5rem);
-  border: var(--border);
+  /* 作品庫裡的線條比全站細一點，元素較密時看起來比較精緻 */
+  --bw: 1.5px;
+  --border: 1.5px solid var(--ink);
+  padding: clamp(0.75rem, 2.5vw, 1.75rem) clamp(0.75rem, 2.5vw, 1.75rem) clamp(3rem, 7vw, 5.5rem);
+  border: 2px solid var(--ink);
   border-radius: var(--radius);
   background: linear-gradient(var(--sky) 0 38%, var(--sky-2) 62%);
   overflow: hidden;
@@ -238,6 +241,32 @@ const purposeIcon: Record<string, string> = { business: 'business', tool: 'tool'
 }
 .explorer {
   position: relative;
+  --win-off: 6px;
+}
+.explorer :deep(.win__bar) {
+  min-height: 1.85rem;
+  padding: 0.2rem 0.45rem 0.2rem 0.6rem;
+  gap: 0.5rem;
+}
+.explorer :deep(.win__title) {
+  font-size: 0.74rem;
+}
+.explorer :deep(.win__stripes) {
+  height: 0.6rem;
+  background: repeating-linear-gradient(to bottom, var(--ink) 0 1px, transparent 1px 3px);
+}
+.explorer :deep(.win__controls i) {
+  width: 0.78rem;
+  height: 0.78rem;
+}
+/* 經典視窗按鈕的立體邊：左上亮、右下暗 */
+.seg button,
+.sort select,
+.filters-toggle,
+.chips button {
+  box-shadow:
+    inset 1px 1px 0 rgb(255 255 255 / 0.9),
+    inset -1px -1px 0 rgb(17 17 17 / 0.12);
 }
 
 /* ---- 工具列 ---- */
@@ -245,27 +274,27 @@ const purposeIcon: Record<string, string> = { business: 'business', tool: 'tool'
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.75rem;
+  gap: 0.45rem;
+  padding: 0.5rem 0.6rem;
   border-bottom: var(--border);
   background: var(--paper);
 }
 .seg {
   display: inline-flex;
   border: var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   background: var(--white);
   overflow: hidden;
 }
 .seg button {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.7rem;
+  gap: 0.3rem;
+  padding: 0.22rem 0.55rem;
   border: 0;
   border-right: var(--border);
   background: none;
-  font-size: 0.85rem;
+  font-size: 0.76rem;
   font-weight: 700;
   line-height: 1.3;
   white-space: nowrap;
@@ -286,7 +315,7 @@ const purposeIcon: Record<string, string> = { business: 'business', tool: 'tool'
 }
 .seg .n {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   font-weight: 500;
   opacity: 0.6;
 }
@@ -297,12 +326,12 @@ button:disabled {
 .search {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
-  flex: 1 1 11rem;
+  gap: 0.4rem;
+  flex: 1 1 10rem;
   min-width: 0;
-  padding: 0.3rem 0.6rem;
+  padding: 0.18rem 0.5rem;
   border: var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   background: var(--white);
 }
 .search input {
@@ -311,7 +340,7 @@ button:disabled {
   border: 0;
   background: none;
   font: inherit;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   outline: none;
 }
 .search:focus-within {
@@ -319,23 +348,23 @@ button:disabled {
   outline-offset: 2px;
 }
 .sort select {
-  padding: 0.35rem 0.5rem;
+  padding: 0.18rem 0.35rem;
   border: var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   background: var(--white);
   font: inherit;
-  font-size: 0.85rem;
+  font-size: 0.76rem;
   font-weight: 700;
   cursor: pointer;
 }
 .filters-toggle {
   display: none;
   position: relative;
-  padding: 0.35rem 0.8rem;
+  padding: 0.2rem 0.65rem;
   border: var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   background: var(--white);
-  font-size: 0.85rem;
+  font-size: 0.76rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -355,15 +384,15 @@ button:disabled {
 /* ---- 主體：側欄 + 作品格 ---- */
 .body {
   display: grid;
-  grid-template-columns: 14.5rem 1fr;
-  min-height: 24rem;
+  grid-template-columns: 11.5rem 1fr;
+  min-height: 22rem;
   background: var(--white);
 }
 .side {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
-  padding: 0.9rem 0.75rem 1.25rem;
+  gap: 0.85rem;
+  padding: 0.6rem 0.5rem 1rem;
   border-right: var(--border);
   background: var(--paper);
 }
@@ -374,13 +403,13 @@ button:disabled {
 .folders button {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.45rem;
   width: 100%;
-  padding: 0.4rem 0.5rem;
+  padding: 0.24rem 0.4rem;
   border: var(--bw) solid transparent;
-  border-radius: 6px;
+  border-radius: 4px;
   background: none;
-  font-size: 0.92rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-align: left;
   cursor: pointer;
@@ -395,35 +424,35 @@ button:disabled {
 .folders button[aria-pressed='true'] {
   border-color: var(--ink);
   background: var(--white);
-  box-shadow: 3px 3px 0 0 var(--ink);
+  box-shadow: 2px 2px 0 0 var(--ink);
 }
 .folders i,
 .chips i {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.64rem;
   font-style: normal;
   color: var(--muted);
 }
 .group__title {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.35rem;
   padding-left: 0.25rem;
-  font-size: 0.72rem;
+  font-size: 0.64rem;
   color: var(--muted);
 }
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.28rem;
 }
 .chips button {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.15rem 0.6rem;
-  border: 1.5px solid var(--ink);
+  gap: 0.28rem;
+  padding: 0.02rem 0.45rem;
+  border: 1px solid var(--ink);
   border-radius: 999px;
   background: var(--white);
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-weight: 500;
   line-height: 1.6;
   cursor: pointer;
@@ -441,12 +470,12 @@ button:disabled {
 
 .grid-wrap {
   min-width: 0;
-  padding: clamp(0.75rem, 2vw, 1.25rem);
+  padding: clamp(0.6rem, 1.5vw, 0.9rem);
 }
 /* 寬螢幕：作品格在視窗內捲動，像真的檔案總管；手機維持整頁捲動 */
 @media (min-width: 861px) {
   .body {
-    height: min(44rem, calc(100dvh - var(--taskbar-h) - 11rem));
+    height: min(38rem, calc(100dvh - var(--nav-h) - 9rem));
   }
   .side,
   .grid-wrap {
@@ -458,8 +487,8 @@ button:disabled {
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
-  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.25rem), 1fr));
+  gap: 0.75rem;
 }
 .card {
   display: flex;
@@ -468,7 +497,7 @@ button:disabled {
   height: 100%;
   padding: 0;
   border: var(--border);
-  border-radius: 8px;
+  border-radius: 5px;
   background: var(--white);
   text-align: left;
   cursor: pointer;
@@ -478,8 +507,8 @@ button:disabled {
 }
 .card:hover,
 .card:focus-visible {
-  transform: translate(-3px, -3px);
-  box-shadow: 5px 5px 0 0 var(--ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 0 var(--ink);
 }
 .card:active {
   transform: none;
@@ -488,9 +517,9 @@ button:disabled {
 .cover {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   border-bottom: var(--border);
-  border-radius: 6px 6px 0 0;
+  border-radius: 4px 4px 0 0;
   overflow: hidden;
   background:
     repeating-conic-gradient(rgb(17 17 17 / 0.1) 0 25%, transparent 0 50%) 0 0 / 4px 4px,
@@ -508,40 +537,40 @@ button:disabled {
 }
 .cover__icon :deep(.px-icon) {
   --tone: var(--white);
-  filter: drop-shadow(4px 4px 0 rgb(17 17 17 / 0.35));
+  filter: drop-shadow(3px 3px 0 rgb(17 17 17 / 0.3));
 }
 .cover__form {
   position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
+  right: 0.4rem;
+  bottom: 0.4rem;
   display: grid;
   place-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  border: 1.5px solid var(--ink);
-  border-radius: 4px;
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
   background: var(--white);
   --tone: var(--yellow);
 }
 .badges {
   position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
+  top: 0.4rem;
+  left: 0.4rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  gap: 0.25rem;
 }
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.05rem 0.45rem 0.05rem 0.3rem;
-  border: 1.5px solid var(--ink);
-  border-radius: 4px;
+  gap: 0.2rem;
+  padding: 0 0.35rem 0 0.25rem;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
   background: var(--white);
-  font-size: 0.72rem;
+  font-size: 0.64rem;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 .badge--live {
   background: var(--yellow);
@@ -557,13 +586,13 @@ button:disabled {
 .card__text {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.15rem;
   flex: 1;
-  padding: 0.75rem 0.85rem 0.85rem;
+  padding: 0.5rem 0.6rem 0.6rem;
 }
 .card__title {
   font-weight: 900;
-  font-size: 1.08rem;
+  font-size: 0.92rem;
   line-height: 1.3;
 }
 .star {
@@ -576,21 +605,21 @@ button:disabled {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-size: 0.86rem;
-  line-height: 1.55;
+  font-size: 0.76rem;
+  line-height: 1.5;
   color: var(--muted);
 }
 .card__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  gap: 0.25rem;
   margin-top: auto;
-  padding-top: 0.5rem;
+  padding-top: 0.4rem;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.62rem;
 }
 .card__meta span {
-  padding: 0 0.4rem;
+  padding: 0 0.3rem;
   border: 1px solid var(--muted-dark);
   border-radius: 3px;
   line-height: 1.6;
@@ -616,11 +645,11 @@ button:disabled {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 0.35rem 0.85rem;
+  padding: 0.2rem 0.7rem;
   border-top: var(--border);
   background: var(--paper);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.66rem;
 }
 .status__clear {
   border: 0;
@@ -656,7 +685,7 @@ button:disabled {
     width: auto;
     border-color: var(--ink);
     background: var(--white);
-    font-size: 0.85rem;
+    font-size: 0.78rem;
   }
   .folders button[aria-pressed='true'] {
     background: var(--yellow);

@@ -88,7 +88,7 @@ onBeforeUnmount(() => {
         <div class="content" :class="{ 'content--icon': !work.image }" :style="{ '--tone': work.color }">
           <div class="visual">
             <img v-if="work.image" :src="`./works/${work.image}`" :alt="work.title" />
-            <span v-else class="visual__icon"><PixelIcon :name="purposeIcon[work.purpose]!" :size="96" /></span>
+            <span v-else class="visual__icon"><PixelIcon :name="purposeIcon[work.purpose]!" :size="64" /></span>
           </div>
 
           <div class="info">
@@ -144,6 +144,8 @@ onBeforeUnmount(() => {
   position: fixed;
   inset: 0;
   z-index: 85;
+  --bw: 1.5px;
+  --border: 1.5px solid var(--ink);
   display: grid;
   place-items: center;
   padding: clamp(0.75rem, 3vw, 2.5rem);
@@ -157,7 +159,8 @@ onBeforeUnmount(() => {
 }
 .modal__win {
   position: relative;
-  width: min(100%, 60rem);
+  width: min(100%, 50rem);
+  --win-off: 6px;
   max-height: 100%;
   animation: pop 0.28s cubic-bezier(0.2, 0.9, 0.3, 1.2);
 }
@@ -180,6 +183,17 @@ onBeforeUnmount(() => {
   }
 }
 
+.modal__win :deep(.win__bar) {
+  min-height: 1.9rem;
+  padding: 0.2rem 0.4rem 0.2rem 0.6rem;
+}
+.modal__win :deep(.win__title) {
+  font-size: 0.74rem;
+}
+.modal__win :deep(.win__stripes) {
+  height: 0.6rem;
+  background: repeating-linear-gradient(to bottom, var(--ink) 0 1px, transparent 1px 3px);
+}
 .pager {
   display: inline-flex;
   align-items: center;
@@ -192,8 +206,8 @@ onBeforeUnmount(() => {
 .close {
   display: grid;
   place-items: center;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.3rem;
+  height: 1.3rem;
   padding: 0;
   border: var(--bw) solid var(--ink);
   border-radius: 3px;
@@ -247,7 +261,7 @@ onBeforeUnmount(() => {
 .info {
   display: flex;
   flex-direction: column;
-  padding: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(1rem, 2.4vw, 1.5rem);
 }
 .year {
   display: flex;
@@ -270,24 +284,26 @@ onBeforeUnmount(() => {
 }
 .title {
   margin-top: 0.4rem;
-  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
   font-weight: 900;
   line-height: 1.2;
 }
 .tagline {
-  margin-top: 0.2rem;
+  margin-top: 0.1rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: var(--muted);
 }
 .summary {
-  margin-top: 0.9rem;
-  font-size: 0.95rem;
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  line-height: 1.7;
 }
 .highlights {
   display: grid;
-  gap: 0.3rem;
-  margin-top: 0.9rem;
-  font-size: 0.9rem;
+  gap: 0.2rem;
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
 }
 .highlights li {
   display: flex;
@@ -315,7 +331,7 @@ onBeforeUnmount(() => {
 }
 .cats dd {
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.8rem;
 }
 .tags {
   display: flex;
@@ -328,15 +344,15 @@ onBeforeUnmount(() => {
   border: 1.5px solid var(--ink);
   border-radius: 4px;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  line-height: 1.7;
+  font-size: 0.66rem;
+  line-height: 1.6;
 }
 .note {
   margin-top: 0.9rem;
   padding: 0.5em 0.75em;
   border-left: 3px solid var(--yellow);
   background: var(--paper);
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   line-height: 1.6;
 }
 .links {
@@ -348,6 +364,9 @@ onBeforeUnmount(() => {
 }
 .links .btn {
   --tone: var(--white);
+  font-size: 0.78rem;
+  padding: 0.45em 0.85em;
+  box-shadow: 2px 2px 0 0 var(--ink);
 }
 
 @media (max-width: 760px) {

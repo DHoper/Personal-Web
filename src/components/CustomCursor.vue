@@ -7,6 +7,9 @@ const INTERACTIVE = 'a, button, [role="button"], [role="tab"]'
 
 const enabled = ref(false)
 const hovering = ref(false)
+// 作品庫、作品視窗裡按鈕很密，圓圈改小、碰到按鈕也不放大
+const compact = ref(false)
+const COMPACT = '#lab, .modal'
 const visible = ref(false)
 const dot = ref<HTMLElement | null>(null)
 const ring = ref<HTMLElement | null>(null)
@@ -38,7 +41,9 @@ function onMove(e: PointerEvent) {
 }
 
 function onOver(e: Event) {
-  hovering.value = !!(e.target as Element | null)?.closest?.(INTERACTIVE)
+  const el = e.target as Element | null
+  hovering.value = !!el?.closest?.(INTERACTIVE)
+  compact.value = !!el?.closest?.(COMPACT)
 }
 
 function onLeave() {
@@ -94,10 +99,10 @@ onBeforeUnmount(() => {
   <div class="frame" aria-hidden="true"></div>
   <div class="progress" aria-hidden="true"><span ref="progress"></span></div>
   <template v-if="enabled">
-    <div ref="ring" class="cursor ring" :class="{ hover: hovering, hidden: !visible }" aria-hidden="true">
+    <div ref="ring" class="cursor ring" :class="{ hover: hovering, compact, hidden: !visible }" aria-hidden="true">
       <span></span>
     </div>
-    <div ref="dot" class="cursor dot" :class="{ hover: hovering, hidden: !visible }" aria-hidden="true">
+    <div ref="dot" class="cursor dot" :class="{ hover: hovering && !compact, hidden: !visible }" aria-hidden="true">
       <span></span>
     </div>
   </template>
@@ -165,6 +170,16 @@ onBeforeUnmount(() => {
 .dot.hover span {
   width: 0;
   height: 0;
+}
+.ring.compact span {
+  width: 18px;
+  height: 18px;
+}
+.ring.compact.hover span {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border-width: 2px;
 }
 .hidden {
   opacity: 0;
