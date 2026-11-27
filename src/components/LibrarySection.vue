@@ -88,7 +88,7 @@ const purposeIcon: Record<string, string> = { business: 'business', tool: 'tool'
         <DeskScene />
         <WinFrame
           class="explorer"
-          :title="`~/${t.lab.window}`"
+          :title="t.lab.window"
           :sub="t.lab.count(list.length, works.length)"
           icon="folder"
           tone="var(--yellow)"
