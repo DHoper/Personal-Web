@@ -146,11 +146,7 @@ ol {
   outline-offset: 4px;
 }
 
-/* 自訂游標啟用時隱藏系統游標（只在滑鼠裝置上） */
-html.has-custom-cursor,
-html.has-custom-cursor * {
-  cursor: none !important;
-}
+/* 系統的箭頭游標保留，自訂游標只在外面加一圈跟隨的圓框 */
 
 .wrap {
   width: 100%;

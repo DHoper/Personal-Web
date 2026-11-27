@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-// 舊版自訂游標的進化：小圓點 + 慢半拍跟隨的反色圓環，移到可點擊的東西上時圓環放大。
+// 系統箭頭游標外面加一圈慢半拍跟隨的反色圓環，移到可點擊的東西上時圓環放大。
 // 只在有滑鼠的裝置啟用。
 const INTERACTIVE = 'a, button, [role="button"], [role="tab"]'
 
@@ -11,7 +11,6 @@ const hovering = ref(false)
 const compact = ref(false)
 const COMPACT = '#lab, .modal'
 const visible = ref(false)
-const dot = ref<HTMLElement | null>(null)
 const ring = ref<HTMLElement | null>(null)
 
 let mq: MediaQueryList | null = null
@@ -24,7 +23,6 @@ let ry = -100
 function loop() {
   rx += (x - rx) * 0.2
   ry += (y - ry) * 0.2
-  if (dot.value) dot.value.style.transform = `translate3d(${x}px, ${y}px, 0)`
   if (ring.value) ring.value.style.transform = `translate3d(${rx}px, ${ry}px, 0)`
   raf = requestAnimationFrame(loop)
 }
@@ -102,9 +100,6 @@ onBeforeUnmount(() => {
     <div ref="ring" class="cursor ring" :class="{ hover: hovering, compact, hidden: !visible }" aria-hidden="true">
       <span></span>
     </div>
-    <div ref="dot" class="cursor dot" :class="{ hover: hovering && !compact, hidden: !visible }" aria-hidden="true">
-      <span></span>
-    </div>
   </template>
 </template>
 
@@ -152,11 +147,6 @@ onBeforeUnmount(() => {
     height 0.25s ease,
     background-color 0.25s;
 }
-.dot span {
-  width: 8px;
-  height: 8px;
-  background: #fff;
-}
 .ring span {
   width: 36px;
   height: 36px;
@@ -166,10 +156,6 @@ onBeforeUnmount(() => {
   width: 64px;
   height: 64px;
   background: #fff;
-}
-.dot.hover span {
-  width: 0;
-  height: 0;
 }
 .ring.compact span {
   width: 18px;
